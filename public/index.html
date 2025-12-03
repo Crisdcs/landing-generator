@@ -1,1 +1,927 @@
-<html><head><meta charset="utf-8"/><title>SheetJS Table Export</title></head><body><table><tr><td data-t="s" data-v="" id="sjs-A1"></td></tr><tr><td data-t="s" data-v="&lt;!DOCTYPE html&gt;<br/>&lt;html lang=&quot;es&quot;&gt;<br/>&lt;head&gt;<br/>    &lt;meta charset=&quot;UTF-8&quot;&gt;<br/>    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;<br/>    &lt;title&gt;Mi Portfolio/CV - Elegante Pastel&lt;/title&gt;<br/>    &lt;!-- Google Fonts for elegant typography --&gt;<br/>    &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Open+Sans:wght@300;400;600&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;<br/>    &lt;!-- Font Awesome for icons --&gt;<br/>    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css&quot;&gt;<br/>    &lt;style&gt;<br/>        /*<br/>         * CSS Stylesheet for Elegant Pastel Portfolio/CV Landing Page<br/>         * <br/>         * This section defines the visual styling of the page,<br/>         * including colors, typography, layout, and responsiveness.<br/>         */<br/><br/>        /* --- Variables &amp; Base Styles --- */<br/>        :root {<br/>            --primary-bg: #FDFDFD; /* Off-white/light cream */<br/>            --secondary-bg: #E6F0F2; /* Very light blue-grey */<br/>            --accent-color-1: #B3D9E6; /* Soft light blue */<br/>            --accent-color-2: #D9EAD3; /* Soft light green */<br/>            --text-color-dark: #333C4A; /* Dark blue-grey for contrast */<br/>            --text-color-light: #6A7F8E; /* Softer dark blue-grey */<br/>            --border-color: #CCE4ED; /* Slightly darker light blue for borders */<br/>            --shadow-light: rgba(0, 0, 0, 0.05);<br/>            --heading-font: &apos;Playfair Display&apos;, serif;<br/>            --body-font: &apos;Open Sans&apos;, sans-serif;<br/>        }<br/><br/>        * {<br/>            box-sizing: border-box;<br/>            margin: 0;<br/>            padding: 0;<br/>        }<br/><br/>        html {<br/>            scroll-behavior: smooth;<br/>        }<br/><br/>        body {<br/>            font-family: var(--body-font);<br/>            line-height: 1.6;<br/>            color: var(--text-color-dark);<br/>            background-color: var(--primary-bg);<br/>            overflow-x: hidden;<br/>        }<br/><br/>        a {<br/>            text-decoration: none;<br/>            color: var(--accent-color-1);<br/>            transition: color 0.3s ease;<br/>        }<br/><br/>        a:hover {<br/>            color: var(--text-color-dark);<br/>        }<br/><br/>        h1, h2, h3, h4, h5, h6 {<br/>            font-family: var(--heading-font);<br/>            color: var(--text-color-dark);<br/>            margin-bottom: 0.8em;<br/>            line-height: 1.2;<br/>        }<br/><br/>        h1 {<br/>            font-size: 3em;<br/>            color: var(--accent-color-1);<br/>        }<br/><br/>        h2 {<br/>            font-size: 2.2em;<br/>            text-align: center;<br/>            margin-bottom: 1.5em;<br/>            position: relative;<br/>        }<br/><br/>        h2::after {<br/>            content: &apos;&apos;;<br/>            display: block;<br/>            width: 50px;<br/>            height: 3px;<br/>            background-color: var(--accent-color-1);<br/>            margin: 10px auto 0;<br/>        }<br/><br/>        p {<br/>            margin-bottom: 1em;<br/>        }<br/><br/>        .container {<br/>            max-width: 1200px;<br/>            margin: 0 auto;<br/>            padding: 20px;<br/>        }<br/><br/>        section {<br/>            padding: 80px 0;<br/>            position: relative;<br/>        }<br/><br/>        section:nth-of-type(even) {<br/>            background-color: var(--secondary-bg);<br/>        }<br/><br/>        /* --- Header &amp; Navigation --- */<br/>        .header {<br/>            background-color: var(--primary-bg);<br/>            padding: 15px 0;<br/>            border-bottom: 1px solid var(--border-color);<br/>            box-shadow: 0 2px 5px var(--shadow-light);<br/>            position: fixed;<br/>            width: 100%;<br/>            top: 0;<br/>            left: 0;<br/>            z-index: 1000;<br/>            transition: background-color 0.3s ease;<br/>        }<br/><br/>        .header .container {<br/>            display: flex;<br/>            justify-content: space-between;<br/>            align-items: center;<br/>        }<br/><br/>        .logo {<br/>            font-family: var(--heading-font);<br/>            font-size: 1.8em;<br/>            color: var(--accent-color-1);<br/>            font-weight: 700;<br/>            transition: color 0.3s ease;<br/>        }<br/><br/>        .logo:hover {<br/>            color: var(--text-color-dark);<br/>        }<br/><br/>        .nav-menu {<br/>            list-style: none;<br/>            display: flex;<br/>        }<br/><br/>        .nav-menu li {<br/>            margin-left: 30px;<br/>        }<br/><br/>        .nav-menu a {<br/>            font-family: var(--body-font);<br/>            font-weight: 600;<br/>            color: var(--text-color-light);<br/>            position: relative;<br/>        }<br/><br/>        .nav-menu a::after {<br/>            content: &apos;&apos;;<br/>            position: absolute;<br/>            left: 0;<br/>            bottom: -5px;<br/>            width: 0;<br/>            height: 2px;<br/>            background-color: var(--accent-color-1);<br/>            transition: width 0.3s ease;<br/>        }<br/><br/>        .nav-menu a:hover::after {<br/>            width: 100%;<br/>        }<br/><br/>        .menu-toggle {<br/>            display: none; /* Hidden on desktop */<br/>            font-size: 1.8em;<br/>            cursor: pointer;<br/>            color: var(--text-color-dark);<br/>        }<br/><br/>        /* --- Hero Section --- */<br/>        .hero {<br/>            background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);<br/>            height: 100vh;<br/>            display: flex;<br/>            align-items: center;<br/>            text-align: center;<br/>            padding-top: 80px; /* Offset for fixed header */<br/>        }<br/><br/>        .hero-content {<br/>            max-width: 800px;<br/>            margin: 0 auto;<br/>        }<br/><br/>        .hero h1 {<br/>            font-size: 4em;<br/>            margin-bottom: 0.2em;<br/>            color: var(--text-color-dark);<br/>        }<br/><br/>        .hero p {<br/>            font-size: 1.5em;<br/>            color: var(--text-color-light);<br/>            margin-bottom: 1.5em;<br/>            font-family: var(--heading-font);<br/>        }<br/><br/>        .btn {<br/>            display: inline-block;<br/>            background-color: var(--accent-color-1);<br/>            color: white;<br/>            padding: 12px 25px;<br/>            border-radius: 5px;<br/>            font-weight: 600;<br/>            transition: background-color 0.3s ease, transform 0.2s ease;<br/>            box-shadow: 0 4px 8px var(--shadow-light);<br/>        }<br/><br/>        .btn:hover {<br/>            background-color: var(--text-color-dark);<br/>            transform: translateY(-2px);<br/>        }<br/><br/>        /* --- About Section --- */<br/>        .about-content {<br/>            display: flex;<br/>            flex-wrap: wrap;<br/>            align-items: center;<br/>            justify-content: center;<br/>            gap: 40px;<br/>        }<br/><br/>        .about-image {<br/>            flex: 1 1 300px;<br/>            text-align: center;<br/>        }<br/><br/>        .about-image img {<br/>            width: 250px;<br/>            height: 250px;<br/>            border-radius: 50%;<br/>            object-fit: cover;<br/>            border: 5px solid var(--accent-color-1);<br/>            box-shadow: 0 8px 15px var(--shadow-light);<br/>        }<br/><br/>        .about-text {<br/>            flex: 2 1 400px;<br/>            max-width: 600px;<br/>            text-align: left;<br/>        }<br/><br/>        /* --- Skills Section --- */<br/>        .skills-grid {<br/>            display: grid;<br/>            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));<br/>            gap: 30px;<br/>            text-align: center;<br/>        }<br/><br/>        .skill-item {<br/>            background-color: var(--primary-bg);<br/>            padding: 30px 20px;<br/>            border-radius: 8px;<br/>            box-shadow: 0 5px 15px var(--shadow-light);<br/>            transition: transform 0.3s ease, box-shadow 0.3s ease;<br/>            border: 1px solid var(--border-color);<br/>        }<br/><br/>        .skill-item:hover {<br/>            transform: translateY(-5px);<br/>            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);<br/>        }<br/><br/>        .skill-item i {<br/>            font-size: 3em;<br/>            color: var(--accent-color-1);<br/>            margin-bottom: 15px;<br/>        }<br/><br/>        .skill-item h3 {<br/>            font-size: 1.2em;<br/>            margin-bottom: 0;<br/>        }<br/><br/>        /* --- Portfolio Section --- */<br/>        .portfolio-grid {<br/>            display: grid;<br/>            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));<br/>            gap: 30px;<br/>        }<br/><br/>        .portfolio-item {<br/>            background-color: var(--primary-bg);<br/>            border-radius: 8px;<br/>            overflow: hidden;<br/>            box-shadow: 0 5px 15px var(--shadow-light);<br/>            transition: transform 0.3s ease, box-shadow 0.3s ease;<br/>            border: 1px solid var(--border-color);<br/>        }<br/><br/>        .portfolio-item:hover {<br/>            transform: translateY(-5px);<br/>            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);<br/>        }<br/><br/>        .portfolio-item img {<br/>            width: 100%;<br/>            height: 200px;<br/>            object-fit: cover;<br/>            display: block;<br/>        }<br/><br/>        .portfolio-info {<br/>            padding: 20px;<br/>        }<br/><br/>        .portfolio-info h3 {<br/>            font-size: 1.5em;<br/>            margin-bottom: 0.5em;<br/>            color: var(--accent-color-1);<br/>        }<br/><br/>        .portfolio-info p {<br/>            font-size: 0.95em;<br/>            color: var(--text-color-light);<br/>            margin-bottom: 1em;<br/>        }<br/><br/>        .portfolio-info .btn {<br/>            padding: 8px 15px;<br/>            font-size: 0.9em;<br/>        }<br/><br/>        /* --- Experience/Education Section --- */<br/>        .timeline {<br/>            position: relative;<br/>            max-width: 900px;<br/>            margin: 0 auto;<br/>        }<br/><br/>        .timeline::before {<br/>            content: &apos;&apos;;<br/>            position: absolute;<br/>            width: 3px;<br/>            background-color: var(--accent-color-1);<br/>            top: 0;<br/>            bottom: 0;<br/>            left: 50%;<br/>            transform: translateX(-50%);<br/>        }<br/><br/>        .timeline-item {<br/>            margin-bottom: 50px;<br/>            position: relative;<br/>            display: flex;<br/>            justify-content: space-between;<br/>            align-items: flex-start;<br/>        }<br/><br/>        .timeline-item:nth-child(odd) {<br/>            flex-direction: row-reverse; /* For alternating sides */<br/>        }<br/><br/>        .timeline-dot {<br/>            position: absolute;<br/>            width: 15px;<br/>            height: 15px;<br/>            background-color: var(--accent-color-2);<br/>            border: 2px solid var(--accent-color-1);<br/>            border-radius: 50%;<br/>            top: 15px;<br/>            left: 50%;<br/>            transform: translateX(-50%);<br/>            z-index: 1;<br/>        }<br/><br/>        .timeline-content {<br/>            background-color: var(--primary-bg);<br/>            padding: 25px;<br/>            border-radius: 8px;<br/>            box-shadow: 0 5px 15px var(--shadow-light);<br/>            width: 45%;<br/>            border: 1px solid var(--border-color);<br/>            transition: transform 0.3s ease, box-shadow 0.3s ease;<br/>        }<br/><br/>        .timeline-content:hover {<br/>            transform: translateY(-3px);<br/>            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);<br/>        }<br/><br/>        .timeline-content h3 {<br/>            color: var(--accent-color-1);<br/>            font-size: 1.3em;<br/>            margin-bottom: 0.5em;<br/>        }<br/><br/>        .timeline-content h4 {<br/>            color: var(--text-color-light);<br/>            font-size: 1.1em;<br/>            margin-bottom: 0.3em;<br/>            font-weight: 400;<br/>        }<br/><br/>        .timeline-content p {<br/>            font-size: 0.9em;<br/>            margin-bottom: 0;<br/>        }<br/><br/>        /* --- Contact Section --- */<br/>        .contact-content {<br/>            text-align: center;<br/>        }<br/><br/>        .contact-content p {<br/>            font-size: 1.1em;<br/>            margin-bottom: 2em;<br/>            color: var(--text-color-light);<br/>        }<br/><br/>        .contact-form {<br/>            max-width: 600px;<br/>            margin: 0 auto;<br/>            background-color: var(--primary-bg);<br/>            padding: 40px;<br/>            border-radius: 8px;<br/>            box-shadow: 0 5px 15px var(--shadow-light);<br/>            border: 1px solid var(--border-color);<br/>        }<br/><br/>        .form-group {<br/>            margin-bottom: 20px;<br/>            text-align: left;<br/>        }<br/><br/>        .form-group label {<br/>            display: block;<br/>            margin-bottom: 8px;<br/>            font-weight: 600;<br/>            color: var(--text-color-dark);<br/>        }<br/><br/>        .form-group input[type=&quot;text&quot;],<br/>        .form-group input[type=&quot;email&quot;],<br/>        .form-group textarea {<br/>            width: 100%;<br/>            padding: 12px;<br/>            border: 1px solid var(--border-color);<br/>            border-radius: 5px;<br/>            font-family: var(--body-font);<br/>            font-size: 1em;<br/>            color: var(--text-color-dark);<br/>            background-color: var(--secondary-bg);<br/>            transition: border-color 0.3s ease, box-shadow 0.3s ease;<br/>        }<br/><br/>        .form-group input:focus,<br/>        .form-group textarea:focus {<br/>            border-color: var(--accent-color-1);<br/>            outline: none;<br/>            box-shadow: 0 0 0 2px rgba(var(--accent-color-1), 0.2);<br/>        }<br/><br/>        .form-group textarea {<br/>            resize: vertical;<br/>            min-height: 120px;<br/>        }<br/><br/>        .contact-form button {<br/>            width: 100%;<br/>            border: none;<br/>            cursor: pointer;<br/>            font-size: 1.1em;<br/>        }<br/><br/>        /* --- Footer --- */<br/>        .footer {<br/>            background-color: var(--text-color-dark);<br/>            color: white;<br/>            text-align: center;<br/>            padding: 40px 0;<br/>            font-size: 0.9em;<br/>        }<br/><br/>        .footer p {<br/>            margin-bottom: 15px;<br/>        }<br/><br/>        .social-links a {<br/>            color: white;<br/>            font-size: 1.5em;<br/>            margin: 0 10px;<br/>            transition: color 0.3s ease;<br/>        }<br/><br/>        .social-links a:hover {<br/>            color: var(--accent-color-1);<br/>        }<br/><br/>        /* --- Scroll to Top Button --- */<br/>        #scrollToTopBtn {<br/>            display: none; /* Hidden by default */<br/>            position: fixed;<br/>            bottom: 20px;<br/>            right: 20px;<br/>            z-index: 99;<br/>            border: none;<br/>            outline: none;<br/>            background-color: var(--accent-color-1);<br/>            color: white;<br/>            cursor: pointer;<br/>            padding: 15px;<br/>            border-radius: 50%;<br/>            font-size: 1.2em;<br/>            box-shadow: 0 2px 10px rgba(0,0,0,0.2);<br/>            transition: background-color 0.3s ease, transform 0.3s ease;<br/>        }<br/><br/>        #scrollToTopBtn:hover {<br/>            background-color: var(--text-color-dark);<br/>            transform: translateY(-3px);<br/>        }<br/><br/>        /* --- Responsive Design --- */<br/>        @media (max-width: 768px) {<br/>            .header .container {<br/>                flex-wrap: wrap;<br/>            }<br/>            .nav-menu {<br/>                display: none; /* Hidden by default on mobile */<br/>                flex-direction: column;<br/>                width: 100%;<br/>                background-color: var(--primary-bg);<br/>                box-shadow: 0 2px 5px var(--shadow-light);<br/>                position: absolute;<br/>                top: 70px; /* Below the header */<br/>                left: 0;<br/>                border-top: 1px solid var(--border-color);<br/>            }<br/>            .nav-menu.active {<br/>                display: flex;<br/>            }<br/>            .nav-menu li {<br/>                margin: 0;<br/>                text-align: center;<br/>                border-bottom: 1px solid var(--border-color);<br/>            }<br/>            .nav-menu li:last-child {<br/>                border-bottom: none;<br/>            }<br/>            .nav-menu a {<br/>                display: block;<br/>                padding: 15px 20px;<br/>            }<br/>            .menu-toggle {<br/>                display: block;<br/>            }<br/><br/>            .hero h1 {<br/>                font-size: 3em;<br/>            }<br/>            .hero p {<br/>                font-size: 1.2em;<br/>            }<br/><br/>            .about-content {<br/>                flex-direction: column;<br/>                text-align: center;<br/>            }<br/>            .about-image {<br/>                margin-bottom: 30px;<br/>            }<br/>            .about-text {<br/>                text-align: center;<br/>            }<br/><br/>            .timeline::before {<br/>                left: 20px;<br/>            }<br/>            .timeline-item {<br/>                flex-direction: column;<br/>                align-items: flex-start;<br/>            }<br/>            .timeline-item:nth-child(odd) {<br/>                flex-direction: column;<br/>            }<br/>            .timeline-dot {<br/>                left: 20px;<br/>                transform: translateX(-50%);<br/>            }<br/>            .timeline-content {<br/>                width: calc(100% - 60px);<br/>                margin-left: 60px;<br/>            }<br/>        }<br/><br/>        @media (max-width: 480px) {<br/>            h1 {<br/>                font-size: 2.5em;<br/>            }<br/>            h2 {<br/>                font-size: 1.8em;<br/>            }<br/>            .hero h1 {<br/>                font-size: 2.5em;<br/>            }<br/>            .hero p {<br/>                font-size: 1em;<br/>            }<br/>            .btn {<br/>                padding: 10px 20px;<br/>                font-size: 0.9em;<br/>            }<br/>            .skills-grid {<br/>                grid-template-columns: 1fr;<br/>            }<br/>            .portfolio-grid {<br/>                grid-template-columns: 1fr;<br/>            }<br/>            .timeline-content {<br/>                padding: 20px;<br/>            }<br/>            .contact-form {<br/>                padding: 25px;<br/>            }<br/>        }<br/>    &lt;/style&gt;<br/>&lt;/head&gt;<br/>&lt;body&gt;<br/>    &lt;!--<br/>     * HTML Structure for Elegant Pastel Portfolio/CV Landing Page<br/>     * <br/>     * This section defines the content and semantic structure of the page.<br/>     * It includes a header with navigation, hero section, about me, skills,<br/>     * portfolio, experience/education, contact form, and a footer.<br/>     --&gt;<br/><br/>    &lt;!-- Header and Navigation --&gt;<br/>    &lt;header class=&quot;header&quot;&gt;<br/>        &lt;div class=&quot;container&quot;&gt;<br/>            &lt;a href=&quot;#hero&quot; class=&quot;logo&quot;&gt;[Tu Nombre]&lt;/a&gt;<br/>            &lt;nav&gt;<br/>                &lt;ul class=&quot;nav-menu&quot; id=&quot;navMenu&quot;&gt;<br/>                    &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;Sobre Mí&lt;/a&gt;&lt;/li&gt;<br/>                    &lt;li&gt;&lt;a href=&quot;#skills&quot;&gt;Habilidades&lt;/a&gt;&lt;/li&gt;<br/>                    &lt;li&gt;&lt;a href=&quot;#portfolio&quot;&gt;Portfolio&lt;/a&gt;&lt;/li&gt;<br/>                    &lt;li&gt;&lt;a href=&quot;#experience&quot;&gt;Experiencia&lt;/a&gt;&lt;/li&gt;<br/>                    &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;Contacto&lt;/a&gt;&lt;/li&gt;<br/>                &lt;/ul&gt;<br/>            &lt;/nav&gt;<br/>            &lt;div class=&quot;menu-toggle&quot; id=&quot;menuToggle&quot;&gt;<br/>                &lt;i class=&quot;fas fa-bars&quot;&gt;&lt;/i&gt;<br/>            &lt;/div&gt;<br/>        &lt;/div&gt;<br/>    &lt;/header&gt;<br/><br/>    &lt;!-- Hero Section --&gt;<br/>    &lt;section id=&quot;hero&quot; class=&quot;hero&quot;&gt;<br/>        &lt;div class=&quot;container hero-content&quot;&gt;<br/>            &lt;h1&gt;Hola, soy [Tu Nombre]&lt;/h1&gt;<br/>            &lt;p&gt;Desarrollador Full-stack | Diseñador UX/UI | Entusiasta Creativo&lt;/p&gt;<br/>            &lt;a href=&quot;#portfolio&quot; class=&quot;btn&quot;&gt;Ver mis Proyectos&lt;/a&gt;<br/>        &lt;/div&gt;<br/>    &lt;/section&gt;<br/><br/>    &lt;!-- About Section --&gt;<br/>    &lt;section id=&quot;about&quot; class=&quot;about&quot;&gt;<br/>        &lt;div class=&quot;container&quot;&gt;<br/>            &lt;h2&gt;Sobre Mí&lt;/h2&gt;<br/>            &lt;div class=&quot;about-content&quot;&gt;<br/>                &lt;div class=&quot;about-image&quot;&gt;<br/>                    &lt;img src=&quot;https://via.placeholder.com/250/B3D9E6/333C4A?text=Tu+Foto&quot; alt=&quot;Tu Foto de Perfil&quot;&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;about-text&quot;&gt;<br/>                    &lt;h3&gt;Un poco sobre mi viaje...&lt;/h3&gt;<br/>                    &lt;p&gt;Soy un profesional apasionado por el desarrollo web y el diseño, con [Número] años de experiencia creando soluciones digitales intuitivas y eficientes. Mi enfoque se centra en combinar la estética con la funcionalidad, garantizando una excelente experiencia de usuario.&lt;/p&gt;<br/>                    &lt;p&gt;He trabajado en diversos proyectos, desde aplicaciones web robustas hasta interfaces de usuario elegantes, siempre buscando aprender y aplicar las últimas tecnologías. Me considero una persona proactiva, orientada a resultados y con una fuerte ética de trabajo.&lt;/p&gt;<br/>                    &lt;a href=&quot;#contact&quot; class=&quot;btn&quot;&gt;¡Hablemos!&lt;/a&gt;<br/>                &lt;/div&gt;<br/>            &lt;/div&gt;<br/>        &lt;/div&gt;<br/>    &lt;/section&gt;<br/><br/>    &lt;!-- Skills Section --&gt;<br/>    &lt;section id=&quot;skills&quot; class=&quot;skills&quot;&gt;<br/>        &lt;div class=&quot;container&quot;&gt;<br/>            &lt;h2&gt;Mis Habilidades&lt;/h2&gt;<br/>            &lt;div class=&quot;skills-grid&quot;&gt;<br/>                &lt;div class=&quot;skill-item&quot;&gt;<br/>                    &lt;i class=&quot;fas fa-laptop-code&quot;&gt;&lt;/i&gt;<br/>                    &lt;h3&gt;Desarrollo Web&lt;/h3&gt;<br/>                    &lt;p&gt;HTML5, CSS3, JavaScript, React, Angular, Vue.js&lt;/p&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;skill-item&quot;&gt;<br/>                    &lt;i class=&quot;fas fa-server&quot;&gt;&lt;/i&gt;<br/>                    &lt;h3&gt;Backend&lt;/h3&gt;<br/>                    &lt;p&gt;Node.js, Python, PHP, .NET, Bases de Datos (SQL/NoSQL)&lt;/p&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;skill-item&quot;&gt;<br/>                    &lt;i class=&quot;fas fa-paint-brush&quot;&gt;&lt;/i&gt;<br/>                    &lt;h3&gt;Diseño UX/UI&lt;/h3&gt;<br/>                    &lt;p&gt;Figma, Sketch, Adobe XD, Prototipado, User Research&lt;/p&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;skill-item&quot;&gt;<br/>                    &lt;i class=&quot;fas fa-mobile-alt&quot;&gt;&lt;/i&gt;<br/>                    &lt;h3&gt;Responsividad&lt;/h3&gt;<br/>                    &lt;p&gt;Diseño Adaptativo, Mobile-First, Frameworks CSS&lt;/p&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;skill-item&quot;&gt;<br/>                    &lt;i class=&quot;fas fa-cloud&quot;&gt;&lt;/i&gt;<br/>                    &lt;h3&gt;DevOps/Cloud&lt;/h3&gt;<br/>                    &lt;p&gt;Docker, Git, AWS, Azure, Google Cloud&lt;/p&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;skill-item&quot;&gt;<br/>                    &lt;i class=&quot;fas fa-lightbulb&quot;&gt;&lt;/i&gt;<br/>                    &lt;h3&gt;Creatividad&lt;/h3&gt;<br/>                    &lt;p&gt;Resolución de problemas, Innovación, Pensamiento lateral&lt;/p&gt;<br/>                &lt;/div&gt;<br/>            &lt;/div&gt;<br/>        &lt;/div&gt;<br/>    &lt;/section&gt;<br/><br/>    &lt;!-- Portfolio Section --&gt;<br/>    &lt;section id=&quot;portfolio&quot; class=&quot;portfolio&quot;&gt;<br/>        &lt;div class=&quot;container&quot;&gt;<br/>            &lt;h2&gt;Mi Portfolio&lt;/h2&gt;<br/>            &lt;div class=&quot;portfolio-grid&quot;&gt;<br/>                &lt;div class=&quot;portfolio-item&quot;&gt;<br/>                    &lt;img src=&quot;https://via.placeholder.com/400x200/B3D9E6/333C4A?text=Proyecto+1&quot; alt=&quot;Proyecto 1&quot;&gt;<br/>                    &lt;div class=&quot;portfolio-info&quot;&gt;<br/>                        &lt;h3&gt;E-commerce Moderno&lt;/h3&gt;<br/>                        &lt;p&gt;Plataforma de comercio electrónico con React y Node.js.&lt;/p&gt;<br/>                        &lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;Ver Proyecto&lt;/a&gt;<br/>                    &lt;/div&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;portfolio-item&quot;&gt;<br/>                    &lt;img src=&quot;https://via.placeholder.com/400x200/D9EAD3/333C4A?text=Proyecto+2&quot; alt=&quot;Proyecto 2&quot;&gt;<br/>                    &lt;div class=&quot;portfolio-info&quot;&gt;<br/>                        &lt;h3&gt;Aplicación de Productividad&lt;/h3&gt;<br/>                        &lt;p&gt;Herramienta para gestionar tareas y proyectos personales.&lt;/p&gt;<br/>                        &lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;Ver Proyecto&lt;/a&gt;<br/>                    &lt;/div&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;portfolio-item&quot;&gt;<br/>                    &lt;img src=&quot;https://via.placeholder.com/400x200/E6F0F2/333C4A?text=Proyecto+3&quot; alt=&quot;Proyecto 3&quot;&gt;<br/>                    &lt;div class=&quot;portfolio-info&quot;&gt;<br/>                        &lt;h3&gt;Red Social Privada&lt;/h3&gt;<br/>                        &lt;p&gt;Diseño y desarrollo de una red social con autenticación.&lt;/p&gt;<br/>                        &lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;Ver Proyecto&lt;/a&gt;<br/>                    &lt;/div&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;portfolio-item&quot;&gt;<br/>                    &lt;img src=&quot;https://via.placeholder.com/400x200/B3D9E6/333C4A?text=Proyecto+4&quot; alt=&quot;Proyecto 4&quot;&gt;<br/>                    &lt;div class=&quot;portfolio-info&quot;&gt;<br/>                        &lt;h3&gt;Sitio Web Corporativo&lt;/h3&gt;<br/>                        &lt;p&gt;Web responsive para empresa de servicios con CMS.&lt;/p&gt;<br/>                        &lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;Ver Proyecto&lt;/a&gt;<br/>                    &lt;/div&gt;<br/>                &lt;/div&gt;<br/>            &lt;/div&gt;<br/>        &lt;/div&gt;<br/>    &lt;/section&gt;<br/><br/>    &lt;!-- Experience &amp; Education Section --&gt;<br/>    &lt;section id=&quot;experience&quot; class=&quot;experience&quot;&gt;<br/>        &lt;div class=&quot;container&quot;&gt;<br/>            &lt;h2&gt;Mi Trayectoria&lt;/h2&gt;<br/>            &lt;div class=&quot;timeline&quot;&gt;<br/>                &lt;div class=&quot;timeline-item&quot;&gt;<br/>                    &lt;div class=&quot;timeline-dot&quot;&gt;&lt;/div&gt;<br/>                    &lt;div class=&quot;timeline-content&quot;&gt;<br/>                        &lt;h3&gt;Desarrollador Senior&lt;/h3&gt;<br/>                        &lt;h4&gt;Empresa Tech Solutions | 2020 - Actualidad&lt;/h4&gt;<br/>                        &lt;p&gt;Liderazgo de equipos en proyectos críticos, implementación de nuevas arquitecturas, mentoría de desarrolladores junior.&lt;/p&gt;<br/>                    &lt;/div&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;timeline-item&quot;&gt;<br/>                    &lt;div class=&quot;timeline-dot&quot;&gt;&lt;/div&gt;<br/>                    &lt;div class=&quot;timeline-content&quot;&gt;<br/>                        &lt;h3&gt;Desarrollador Full-stack&lt;/h3&gt;<br/>                        &lt;h4&gt;Agencia Creativa Digital | 2017 - 2020&lt;/h4&gt;<br/>                        &lt;p&gt;Desarrollo front-end y back-end para diversos clientes, mantenimiento y optimización de bases de datos.&lt;/p&gt;<br/>                    &lt;/div&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;timeline-item&quot;&gt;<br/>                    &lt;div class=&quot;timeline-dot&quot;&gt;&lt;/div&gt;<br/>                    &lt;div class=&quot;timeline-content&quot;&gt;<br/>                        &lt;h3&gt;Grado en Ingeniería Informática&lt;/h3&gt;<br/>                        &lt;h4&gt;Universidad Nacional de Tecnología | 2012 - 2017&lt;/h4&gt;<br/>                        &lt;p&gt;Especialización en desarrollo de software y sistemas de información.&lt;/p&gt;<br/>                    &lt;/div&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;timeline-item&quot;&gt;<br/>                    &lt;div class=&quot;timeline-dot&quot;&gt;&lt;/div&gt;<br/>                    &lt;div class=&quot;timeline-content&quot;&gt;<br/>                        &lt;h3&gt;Diseñador Web Jr.&lt;/h3&gt;<br/>                        &lt;h4&gt;Startup Innovadora | 2016 - 2017 (Prácticas)&lt;/h4&gt;<br/>                        &lt;p&gt;Diseño de interfaces de usuario, maquetación de sitios web con HTML y CSS.&lt;/p&gt;<br/>                    &lt;/div&gt;<br/>                &lt;/div&gt;<br/>            &lt;/div&gt;<br/>        &lt;/div&gt;<br/>    &lt;/section&gt;<br/><br/>    &lt;!-- Contact Section --&gt;<br/>    &lt;section id=&quot;contact&quot; class=&quot;contact&quot;&gt;<br/>        &lt;div class=&quot;container contact-content&quot;&gt;<br/>            &lt;h2&gt;Contáctame&lt;/h2&gt;<br/>            &lt;p&gt;¿Tienes un proyecto en mente o solo quieres saludar? ¡No dudes en escribirme!&lt;/p&gt;<br/>            &lt;form class=&quot;contact-form&quot; action=&quot;#&quot; method=&quot;POST&quot;&gt;<br/>                &lt;div class=&quot;form-group&quot;&gt;<br/>                    &lt;label for=&quot;name&quot;&gt;Nombre Completo&lt;/label&gt;<br/>                    &lt;input type=&quot;text&quot; id=&quot;name&quot; name=&quot;name&quot; required&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;form-group&quot;&gt;<br/>                    &lt;label for=&quot;email&quot;&gt;Correo Electrónico&lt;/label&gt;<br/>                    &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; required&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;form-group&quot;&gt;<br/>                    &lt;label for=&quot;message&quot;&gt;Tu Mensaje&lt;/label&gt;<br/>                    &lt;textarea id=&quot;message&quot; name=&quot;message&quot; required&gt;&lt;/textarea&gt;<br/>                &lt;/div&gt;<br/>                &lt;button type=&quot;submit&quot; class=&quot;btn&quot;&gt;Enviar Mensaje&lt;/button&gt;<br/>            &lt;/form&gt;<br/>        &lt;/div&gt;<br/>    &lt;/section&gt;<br/><br/>    &lt;!-- Footer --&gt;<br/>    &lt;footer class=&quot;footer&quot;&gt;<br/>        &lt;div class=&quot;container&quot;&gt;<br/>            &lt;p&gt;&amp;copy; 2023 [Tu Nombre]. Todos los derechos reservados.&lt;/p&gt;<br/>            &lt;div class=&quot;social-links&quot;&gt;<br/>                &lt;a href=&quot;#&quot; target=&quot;_blank&quot; aria-label=&quot;LinkedIn&quot;&gt;&lt;i class=&quot;fab fa-linkedin&quot;&gt;&lt;/i&gt;&lt;/a&gt;<br/>                &lt;a href=&quot;#&quot; target=&quot;_blank&quot; aria-label=&quot;GitHub&quot;&gt;&lt;i class=&quot;fab fa-github&quot;&gt;&lt;/i&gt;&lt;/a&gt;<br/>                &lt;a href=&quot;#&quot; target=&quot;_blank&quot; aria-label=&quot;Twitter&quot;&gt;&lt;i class=&quot;fab fa-twitter&quot;&gt;&lt;/i&gt;&lt;/a&gt;<br/>                &lt;a href=&quot;#&quot; target=&quot;_blank&quot; aria-label=&quot;Instagram&quot;&gt;&lt;i class=&quot;fab fa-instagram&quot;&gt;&lt;/i&gt;&lt;/a&gt;<br/>            &lt;/div&gt;<br/>        &lt;/div&gt;<br/>    &lt;/footer&gt;<br/><br/>    &lt;!-- Scroll to Top Button --&gt;<br/>    &lt;button id=&quot;scrollToTopBtn&quot; title=&quot;Ir arriba&quot;&gt;&lt;i class=&quot;fas fa-arrow-up&quot;&gt;&lt;/i&gt;&lt;/button&gt;<br/><br/>    &lt;!--<br/>     * JavaScript for Page Interactivity<br/>     * <br/>     * This section handles dynamic behaviors like smooth scrolling<br/>     * and the mobile navigation toggle.<br/>     --&gt;<br/>    &lt;script&gt;<br/>        document.addEventListener(&apos;DOMContentLoaded&apos;, function() {<br/>            // --- Smooth Scrolling for Navigation Links ---<br/>            document.querySelectorAll(&apos;a[href^=&quot;#&quot;]&apos;).forEach(anchor =&gt; {<br/>                anchor.addEventListener(&apos;click&apos;, function (e) {<br/>                    e.preventDefault();<br/>                    const targetId = this.getAttribute(&apos;href&apos;);<br/>                    const targetElement = document.querySelector(targetId);<br/>                    if (targetElement) {<br/>                        // Scroll to element, accounting for fixed header height<br/>                        const headerOffset = document.querySelector(&apos;.header&apos;).offsetHeight;<br/>                        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;<br/>                        const offsetPosition = elementPosition - headerOffset - 20; // Added 20px padding<br/><br/>                        window.scrollTo({<br/>                            top: offsetPosition,<br/>                            behavior: &apos;smooth&apos;<br/>                        });<br/><br/>                        // Close mobile menu if open<br/>                        if (navMenu.classList.contains(&apos;active&apos;)) {<br/>                            navMenu.classList.remove(&apos;active&apos;);<br/>                            menuToggle.innerHTML = &apos;&lt;i class=&quot;fas fa-bars&quot;&gt;&lt;/i&gt;&apos;;<br/>                        }<br/>                    }<br/>                });<br/>            });<br/><br/>            // --- Mobile Navigation Toggle ---<br/>            const menuToggle = document.getElementById(&apos;menuToggle&apos;);<br/>            const navMenu = document.getElementById(&apos;navMenu&apos;);<br/><br/>            if (menuToggle &amp;&amp; navMenu) {<br/>                menuToggle.addEventListener(&apos;click&apos;, function() {<br/>                    navMenu.classList.toggle(&apos;active&apos;);<br/>                    if (navMenu.classList.contains(&apos;active&apos;)) {<br/>                        this.innerHTML = &apos;&lt;i class=&quot;fas fa-times&quot;&gt;&lt;/i&gt;&apos;; // Change icon to &apos;X&apos;<br/>                    } else {<br/>                        this.innerHTML = &apos;&lt;i class=&quot;fas fa-bars&quot;&gt;&lt;/i&gt;&apos;; // Change icon back to hamburger<br/>                    }<br/>                });<br/>            }<br/><br/>            // --- Scroll to Top Button Functionality ---<br/>            const scrollToTopBtn = document.getElementById(&apos;scrollToTopBtn&apos;);<br/><br/>            // Show/hide button based on scroll position<br/>            window.addEventListener(&apos;scroll&apos;, function() {<br/>                if (window.pageYOffset &gt; 300) { // Show button after scrolling 300px<br/>                    scrollToTopBtn.style.display = &apos;block&apos;;<br/>                } else {<br/>                    scrollToTopBtn.style.display = &apos;none&apos;;<br/>                }<br/>            });<br/><br/>            // Scroll to top when button is clicked<br/>            scrollToTopBtn.addEventListener(&apos;click&apos;, function() {<br/>                window.scrollTo({<br/>                    top: 0,<br/>                    behavior: &apos;smooth&apos;<br/>                });<br/>            });<br/>        });<br/>    &lt;/script&gt;<br/>&lt;/body&gt;<br/>&lt;/html&gt;<br/><br/><br/>" id="sjs-A2">&lt;!DOCTYPE html&gt;<br/>&lt;html lang=&quot;es&quot;&gt;<br/>&lt;head&gt;<br/>    &lt;meta charset=&quot;UTF-8&quot;&gt;<br/>    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;<br/>    &lt;title&gt;Mi Portfolio/CV - Elegante Pastel&lt;/title&gt;<br/>    &lt;!-- Google Fonts for elegant typography --&gt;<br/>    &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Open+Sans:wght@300;400;600&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;<br/>    &lt;!-- Font Awesome for icons --&gt;<br/>    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css&quot;&gt;<br/>    &lt;style&gt;<br/>        /*<br/>         * CSS Stylesheet for Elegant Pastel Portfolio/CV Landing Page<br/>         * <br/>         * This section defines the visual styling of the page,<br/>         * including colors, typography, layout, and responsiveness.<br/>         */<br/><br/>        /* --- Variables &amp; Base Styles --- */<br/>        :root {<br/>            --primary-bg: #FDFDFD; /* Off-white/light cream */<br/>            --secondary-bg: #E6F0F2; /* Very light blue-grey */<br/>            --accent-color-1: #B3D9E6; /* Soft light blue */<br/>            --accent-color-2: #D9EAD3; /* Soft light green */<br/>            --text-color-dark: #333C4A; /* Dark blue-grey for contrast */<br/>            --text-color-light: #6A7F8E; /* Softer dark blue-grey */<br/>            --border-color: #CCE4ED; /* Slightly darker light blue for borders */<br/>            --shadow-light: rgba(0, 0, 0, 0.05);<br/>            --heading-font: &apos;Playfair Display&apos;, serif;<br/>            --body-font: &apos;Open Sans&apos;, sans-serif;<br/>        }<br/><br/>        * {<br/>            box-sizing: border-box;<br/>            margin: 0;<br/>            padding: 0;<br/>        }<br/><br/>        html {<br/>            scroll-behavior: smooth;<br/>        }<br/><br/>        body {<br/>            font-family: var(--body-font);<br/>            line-height: 1.6;<br/>            color: var(--text-color-dark);<br/>            background-color: var(--primary-bg);<br/>            overflow-x: hidden;<br/>        }<br/><br/>        a {<br/>            text-decoration: none;<br/>            color: var(--accent-color-1);<br/>            transition: color 0.3s ease;<br/>        }<br/><br/>        a:hover {<br/>            color: var(--text-color-dark);<br/>        }<br/><br/>        h1, h2, h3, h4, h5, h6 {<br/>            font-family: var(--heading-font);<br/>            color: var(--text-color-dark);<br/>            margin-bottom: 0.8em;<br/>            line-height: 1.2;<br/>        }<br/><br/>        h1 {<br/>            font-size: 3em;<br/>            color: var(--accent-color-1);<br/>        }<br/><br/>        h2 {<br/>            font-size: 2.2em;<br/>            text-align: center;<br/>            margin-bottom: 1.5em;<br/>            position: relative;<br/>        }<br/><br/>        h2::after {<br/>            content: &apos;&apos;;<br/>            display: block;<br/>            width: 50px;<br/>            height: 3px;<br/>            background-color: var(--accent-color-1);<br/>            margin: 10px auto 0;<br/>        }<br/><br/>        p {<br/>            margin-bottom: 1em;<br/>        }<br/><br/>        .container {<br/>            max-width: 1200px;<br/>            margin: 0 auto;<br/>            padding: 20px;<br/>        }<br/><br/>        section {<br/>            padding: 80px 0;<br/>            position: relative;<br/>        }<br/><br/>        section:nth-of-type(even) {<br/>            background-color: var(--secondary-bg);<br/>        }<br/><br/>        /* --- Header &amp; Navigation --- */<br/>        .header {<br/>            background-color: var(--primary-bg);<br/>            padding: 15px 0;<br/>            border-bottom: 1px solid var(--border-color);<br/>            box-shadow: 0 2px 5px var(--shadow-light);<br/>            position: fixed;<br/>            width: 100%;<br/>            top: 0;<br/>            left: 0;<br/>            z-index: 1000;<br/>            transition: background-color 0.3s ease;<br/>        }<br/><br/>        .header .container {<br/>            display: flex;<br/>            justify-content: space-between;<br/>            align-items: center;<br/>        }<br/><br/>        .logo {<br/>            font-family: var(--heading-font);<br/>            font-size: 1.8em;<br/>            color: var(--accent-color-1);<br/>            font-weight: 700;<br/>            transition: color 0.3s ease;<br/>        }<br/><br/>        .logo:hover {<br/>            color: var(--text-color-dark);<br/>        }<br/><br/>        .nav-menu {<br/>            list-style: none;<br/>            display: flex;<br/>        }<br/><br/>        .nav-menu li {<br/>            margin-left: 30px;<br/>        }<br/><br/>        .nav-menu a {<br/>            font-family: var(--body-font);<br/>            font-weight: 600;<br/>            color: var(--text-color-light);<br/>            position: relative;<br/>        }<br/><br/>        .nav-menu a::after {<br/>            content: &apos;&apos;;<br/>            position: absolute;<br/>            left: 0;<br/>            bottom: -5px;<br/>            width: 0;<br/>            height: 2px;<br/>            background-color: var(--accent-color-1);<br/>            transition: width 0.3s ease;<br/>        }<br/><br/>        .nav-menu a:hover::after {<br/>            width: 100%;<br/>        }<br/><br/>        .menu-toggle {<br/>            display: none; /* Hidden on desktop */<br/>            font-size: 1.8em;<br/>            cursor: pointer;<br/>            color: var(--text-color-dark);<br/>        }<br/><br/>        /* --- Hero Section --- */<br/>        .hero {<br/>            background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);<br/>            height: 100vh;<br/>            display: flex;<br/>            align-items: center;<br/>            text-align: center;<br/>            padding-top: 80px; /* Offset for fixed header */<br/>        }<br/><br/>        .hero-content {<br/>            max-width: 800px;<br/>            margin: 0 auto;<br/>        }<br/><br/>        .hero h1 {<br/>            font-size: 4em;<br/>            margin-bottom: 0.2em;<br/>            color: var(--text-color-dark);<br/>        }<br/><br/>        .hero p {<br/>            font-size: 1.5em;<br/>            color: var(--text-color-light);<br/>            margin-bottom: 1.5em;<br/>            font-family: var(--heading-font);<br/>        }<br/><br/>        .btn {<br/>            display: inline-block;<br/>            background-color: var(--accent-color-1);<br/>            color: white;<br/>            padding: 12px 25px;<br/>            border-radius: 5px;<br/>            font-weight: 600;<br/>            transition: background-color 0.3s ease, transform 0.2s ease;<br/>            box-shadow: 0 4px 8px var(--shadow-light);<br/>        }<br/><br/>        .btn:hover {<br/>            background-color: var(--text-color-dark);<br/>            transform: translateY(-2px);<br/>        }<br/><br/>        /* --- About Section --- */<br/>        .about-content {<br/>            display: flex;<br/>            flex-wrap: wrap;<br/>            align-items: center;<br/>            justify-content: center;<br/>            gap: 40px;<br/>        }<br/><br/>        .about-image {<br/>            flex: 1 1 300px;<br/>            text-align: center;<br/>        }<br/><br/>        .about-image img {<br/>            width: 250px;<br/>            height: 250px;<br/>            border-radius: 50%;<br/>            object-fit: cover;<br/>            border: 5px solid var(--accent-color-1);<br/>            box-shadow: 0 8px 15px var(--shadow-light);<br/>        }<br/><br/>        .about-text {<br/>            flex: 2 1 400px;<br/>            max-width: 600px;<br/>            text-align: left;<br/>        }<br/><br/>        /* --- Skills Section --- */<br/>        .skills-grid {<br/>            display: grid;<br/>            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));<br/>            gap: 30px;<br/>            text-align: center;<br/>        }<br/><br/>        .skill-item {<br/>            background-color: var(--primary-bg);<br/>            padding: 30px 20px;<br/>            border-radius: 8px;<br/>            box-shadow: 0 5px 15px var(--shadow-light);<br/>            transition: transform 0.3s ease, box-shadow 0.3s ease;<br/>            border: 1px solid var(--border-color);<br/>        }<br/><br/>        .skill-item:hover {<br/>            transform: translateY(-5px);<br/>            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);<br/>        }<br/><br/>        .skill-item i {<br/>            font-size: 3em;<br/>            color: var(--accent-color-1);<br/>            margin-bottom: 15px;<br/>        }<br/><br/>        .skill-item h3 {<br/>            font-size: 1.2em;<br/>            margin-bottom: 0;<br/>        }<br/><br/>        /* --- Portfolio Section --- */<br/>        .portfolio-grid {<br/>            display: grid;<br/>            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));<br/>            gap: 30px;<br/>        }<br/><br/>        .portfolio-item {<br/>            background-color: var(--primary-bg);<br/>            border-radius: 8px;<br/>            overflow: hidden;<br/>            box-shadow: 0 5px 15px var(--shadow-light);<br/>            transition: transform 0.3s ease, box-shadow 0.3s ease;<br/>            border: 1px solid var(--border-color);<br/>        }<br/><br/>        .portfolio-item:hover {<br/>            transform: translateY(-5px);<br/>            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);<br/>        }<br/><br/>        .portfolio-item img {<br/>            width: 100%;<br/>            height: 200px;<br/>            object-fit: cover;<br/>            display: block;<br/>        }<br/><br/>        .portfolio-info {<br/>            padding: 20px;<br/>        }<br/><br/>        .portfolio-info h3 {<br/>            font-size: 1.5em;<br/>            margin-bottom: 0.5em;<br/>            color: var(--accent-color-1);<br/>        }<br/><br/>        .portfolio-info p {<br/>            font-size: 0.95em;<br/>            color: var(--text-color-light);<br/>            margin-bottom: 1em;<br/>        }<br/><br/>        .portfolio-info .btn {<br/>            padding: 8px 15px;<br/>            font-size: 0.9em;<br/>        }<br/><br/>        /* --- Experience/Education Section --- */<br/>        .timeline {<br/>            position: relative;<br/>            max-width: 900px;<br/>            margin: 0 auto;<br/>        }<br/><br/>        .timeline::before {<br/>            content: &apos;&apos;;<br/>            position: absolute;<br/>            width: 3px;<br/>            background-color: var(--accent-color-1);<br/>            top: 0;<br/>            bottom: 0;<br/>            left: 50%;<br/>            transform: translateX(-50%);<br/>        }<br/><br/>        .timeline-item {<br/>            margin-bottom: 50px;<br/>            position: relative;<br/>            display: flex;<br/>            justify-content: space-between;<br/>            align-items: flex-start;<br/>        }<br/><br/>        .timeline-item:nth-child(odd) {<br/>            flex-direction: row-reverse; /* For alternating sides */<br/>        }<br/><br/>        .timeline-dot {<br/>            position: absolute;<br/>            width: 15px;<br/>            height: 15px;<br/>            background-color: var(--accent-color-2);<br/>            border: 2px solid var(--accent-color-1);<br/>            border-radius: 50%;<br/>            top: 15px;<br/>            left: 50%;<br/>            transform: translateX(-50%);<br/>            z-index: 1;<br/>        }<br/><br/>        .timeline-content {<br/>            background-color: var(--primary-bg);<br/>            padding: 25px;<br/>            border-radius: 8px;<br/>            box-shadow: 0 5px 15px var(--shadow-light);<br/>            width: 45%;<br/>            border: 1px solid var(--border-color);<br/>            transition: transform 0.3s ease, box-shadow 0.3s ease;<br/>        }<br/><br/>        .timeline-content:hover {<br/>            transform: translateY(-3px);<br/>            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);<br/>        }<br/><br/>        .timeline-content h3 {<br/>            color: var(--accent-color-1);<br/>            font-size: 1.3em;<br/>            margin-bottom: 0.5em;<br/>        }<br/><br/>        .timeline-content h4 {<br/>            color: var(--text-color-light);<br/>            font-size: 1.1em;<br/>            margin-bottom: 0.3em;<br/>            font-weight: 400;<br/>        }<br/><br/>        .timeline-content p {<br/>            font-size: 0.9em;<br/>            margin-bottom: 0;<br/>        }<br/><br/>        /* --- Contact Section --- */<br/>        .contact-content {<br/>            text-align: center;<br/>        }<br/><br/>        .contact-content p {<br/>            font-size: 1.1em;<br/>            margin-bottom: 2em;<br/>            color: var(--text-color-light);<br/>        }<br/><br/>        .contact-form {<br/>            max-width: 600px;<br/>            margin: 0 auto;<br/>            background-color: var(--primary-bg);<br/>            padding: 40px;<br/>            border-radius: 8px;<br/>            box-shadow: 0 5px 15px var(--shadow-light);<br/>            border: 1px solid var(--border-color);<br/>        }<br/><br/>        .form-group {<br/>            margin-bottom: 20px;<br/>            text-align: left;<br/>        }<br/><br/>        .form-group label {<br/>            display: block;<br/>            margin-bottom: 8px;<br/>            font-weight: 600;<br/>            color: var(--text-color-dark);<br/>        }<br/><br/>        .form-group input[type=&quot;text&quot;],<br/>        .form-group input[type=&quot;email&quot;],<br/>        .form-group textarea {<br/>            width: 100%;<br/>            padding: 12px;<br/>            border: 1px solid var(--border-color);<br/>            border-radius: 5px;<br/>            font-family: var(--body-font);<br/>            font-size: 1em;<br/>            color: var(--text-color-dark);<br/>            background-color: var(--secondary-bg);<br/>            transition: border-color 0.3s ease, box-shadow 0.3s ease;<br/>        }<br/><br/>        .form-group input:focus,<br/>        .form-group textarea:focus {<br/>            border-color: var(--accent-color-1);<br/>            outline: none;<br/>            box-shadow: 0 0 0 2px rgba(var(--accent-color-1), 0.2);<br/>        }<br/><br/>        .form-group textarea {<br/>            resize: vertical;<br/>            min-height: 120px;<br/>        }<br/><br/>        .contact-form button {<br/>            width: 100%;<br/>            border: none;<br/>            cursor: pointer;<br/>            font-size: 1.1em;<br/>        }<br/><br/>        /* --- Footer --- */<br/>        .footer {<br/>            background-color: var(--text-color-dark);<br/>            color: white;<br/>            text-align: center;<br/>            padding: 40px 0;<br/>            font-size: 0.9em;<br/>        }<br/><br/>        .footer p {<br/>            margin-bottom: 15px;<br/>        }<br/><br/>        .social-links a {<br/>            color: white;<br/>            font-size: 1.5em;<br/>            margin: 0 10px;<br/>            transition: color 0.3s ease;<br/>        }<br/><br/>        .social-links a:hover {<br/>            color: var(--accent-color-1);<br/>        }<br/><br/>        /* --- Scroll to Top Button --- */<br/>        #scrollToTopBtn {<br/>            display: none; /* Hidden by default */<br/>            position: fixed;<br/>            bottom: 20px;<br/>            right: 20px;<br/>            z-index: 99;<br/>            border: none;<br/>            outline: none;<br/>            background-color: var(--accent-color-1);<br/>            color: white;<br/>            cursor: pointer;<br/>            padding: 15px;<br/>            border-radius: 50%;<br/>            font-size: 1.2em;<br/>            box-shadow: 0 2px 10px rgba(0,0,0,0.2);<br/>            transition: background-color 0.3s ease, transform 0.3s ease;<br/>        }<br/><br/>        #scrollToTopBtn:hover {<br/>            background-color: var(--text-color-dark);<br/>            transform: translateY(-3px);<br/>        }<br/><br/>        /* --- Responsive Design --- */<br/>        @media (max-width: 768px) {<br/>            .header .container {<br/>                flex-wrap: wrap;<br/>            }<br/>            .nav-menu {<br/>                display: none; /* Hidden by default on mobile */<br/>                flex-direction: column;<br/>                width: 100%;<br/>                background-color: var(--primary-bg);<br/>                box-shadow: 0 2px 5px var(--shadow-light);<br/>                position: absolute;<br/>                top: 70px; /* Below the header */<br/>                left: 0;<br/>                border-top: 1px solid var(--border-color);<br/>            }<br/>            .nav-menu.active {<br/>                display: flex;<br/>            }<br/>            .nav-menu li {<br/>                margin: 0;<br/>                text-align: center;<br/>                border-bottom: 1px solid var(--border-color);<br/>            }<br/>            .nav-menu li:last-child {<br/>                border-bottom: none;<br/>            }<br/>            .nav-menu a {<br/>                display: block;<br/>                padding: 15px 20px;<br/>            }<br/>            .menu-toggle {<br/>                display: block;<br/>            }<br/><br/>            .hero h1 {<br/>                font-size: 3em;<br/>            }<br/>            .hero p {<br/>                font-size: 1.2em;<br/>            }<br/><br/>            .about-content {<br/>                flex-direction: column;<br/>                text-align: center;<br/>            }<br/>            .about-image {<br/>                margin-bottom: 30px;<br/>            }<br/>            .about-text {<br/>                text-align: center;<br/>            }<br/><br/>            .timeline::before {<br/>                left: 20px;<br/>            }<br/>            .timeline-item {<br/>                flex-direction: column;<br/>                align-items: flex-start;<br/>            }<br/>            .timeline-item:nth-child(odd) {<br/>                flex-direction: column;<br/>            }<br/>            .timeline-dot {<br/>                left: 20px;<br/>                transform: translateX(-50%);<br/>            }<br/>            .timeline-content {<br/>                width: calc(100% - 60px);<br/>                margin-left: 60px;<br/>            }<br/>        }<br/><br/>        @media (max-width: 480px) {<br/>            h1 {<br/>                font-size: 2.5em;<br/>            }<br/>            h2 {<br/>                font-size: 1.8em;<br/>            }<br/>            .hero h1 {<br/>                font-size: 2.5em;<br/>            }<br/>            .hero p {<br/>                font-size: 1em;<br/>            }<br/>            .btn {<br/>                padding: 10px 20px;<br/>                font-size: 0.9em;<br/>            }<br/>            .skills-grid {<br/>                grid-template-columns: 1fr;<br/>            }<br/>            .portfolio-grid {<br/>                grid-template-columns: 1fr;<br/>            }<br/>            .timeline-content {<br/>                padding: 20px;<br/>            }<br/>            .contact-form {<br/>                padding: 25px;<br/>            }<br/>        }<br/>    &lt;/style&gt;<br/>&lt;/head&gt;<br/>&lt;body&gt;<br/>    &lt;!--<br/>     * HTML Structure for Elegant Pastel Portfolio/CV Landing Page<br/>     * <br/>     * This section defines the content and semantic structure of the page.<br/>     * It includes a header with navigation, hero section, about me, skills,<br/>     * portfolio, experience/education, contact form, and a footer.<br/>     --&gt;<br/><br/>    &lt;!-- Header and Navigation --&gt;<br/>    &lt;header class=&quot;header&quot;&gt;<br/>        &lt;div class=&quot;container&quot;&gt;<br/>            &lt;a href=&quot;#hero&quot; class=&quot;logo&quot;&gt;[Tu Nombre]&lt;/a&gt;<br/>            &lt;nav&gt;<br/>                &lt;ul class=&quot;nav-menu&quot; id=&quot;navMenu&quot;&gt;<br/>                    &lt;li&gt;&lt;a href=&quot;#about&quot;&gt;Sobre Mí&lt;/a&gt;&lt;/li&gt;<br/>                    &lt;li&gt;&lt;a href=&quot;#skills&quot;&gt;Habilidades&lt;/a&gt;&lt;/li&gt;<br/>                    &lt;li&gt;&lt;a href=&quot;#portfolio&quot;&gt;Portfolio&lt;/a&gt;&lt;/li&gt;<br/>                    &lt;li&gt;&lt;a href=&quot;#experience&quot;&gt;Experiencia&lt;/a&gt;&lt;/li&gt;<br/>                    &lt;li&gt;&lt;a href=&quot;#contact&quot;&gt;Contacto&lt;/a&gt;&lt;/li&gt;<br/>                &lt;/ul&gt;<br/>            &lt;/nav&gt;<br/>            &lt;div class=&quot;menu-toggle&quot; id=&quot;menuToggle&quot;&gt;<br/>                &lt;i class=&quot;fas fa-bars&quot;&gt;&lt;/i&gt;<br/>            &lt;/div&gt;<br/>        &lt;/div&gt;<br/>    &lt;/header&gt;<br/><br/>    &lt;!-- Hero Section --&gt;<br/>    &lt;section id=&quot;hero&quot; class=&quot;hero&quot;&gt;<br/>        &lt;div class=&quot;container hero-content&quot;&gt;<br/>            &lt;h1&gt;Hola, soy [Tu Nombre]&lt;/h1&gt;<br/>            &lt;p&gt;Desarrollador Full-stack | Diseñador UX/UI | Entusiasta Creativo&lt;/p&gt;<br/>            &lt;a href=&quot;#portfolio&quot; class=&quot;btn&quot;&gt;Ver mis Proyectos&lt;/a&gt;<br/>        &lt;/div&gt;<br/>    &lt;/section&gt;<br/><br/>    &lt;!-- About Section --&gt;<br/>    &lt;section id=&quot;about&quot; class=&quot;about&quot;&gt;<br/>        &lt;div class=&quot;container&quot;&gt;<br/>            &lt;h2&gt;Sobre Mí&lt;/h2&gt;<br/>            &lt;div class=&quot;about-content&quot;&gt;<br/>                &lt;div class=&quot;about-image&quot;&gt;<br/>                    &lt;img src=&quot;https://via.placeholder.com/250/B3D9E6/333C4A?text=Tu+Foto&quot; alt=&quot;Tu Foto de Perfil&quot;&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;about-text&quot;&gt;<br/>                    &lt;h3&gt;Un poco sobre mi viaje...&lt;/h3&gt;<br/>                    &lt;p&gt;Soy un profesional apasionado por el desarrollo web y el diseño, con [Número] años de experiencia creando soluciones digitales intuitivas y eficientes. Mi enfoque se centra en combinar la estética con la funcionalidad, garantizando una excelente experiencia de usuario.&lt;/p&gt;<br/>                    &lt;p&gt;He trabajado en diversos proyectos, desde aplicaciones web robustas hasta interfaces de usuario elegantes, siempre buscando aprender y aplicar las últimas tecnologías. Me considero una persona proactiva, orientada a resultados y con una fuerte ética de trabajo.&lt;/p&gt;<br/>                    &lt;a href=&quot;#contact&quot; class=&quot;btn&quot;&gt;¡Hablemos!&lt;/a&gt;<br/>                &lt;/div&gt;<br/>            &lt;/div&gt;<br/>        &lt;/div&gt;<br/>    &lt;/section&gt;<br/><br/>    &lt;!-- Skills Section --&gt;<br/>    &lt;section id=&quot;skills&quot; class=&quot;skills&quot;&gt;<br/>        &lt;div class=&quot;container&quot;&gt;<br/>            &lt;h2&gt;Mis Habilidades&lt;/h2&gt;<br/>            &lt;div class=&quot;skills-grid&quot;&gt;<br/>                &lt;div class=&quot;skill-item&quot;&gt;<br/>                    &lt;i class=&quot;fas fa-laptop-code&quot;&gt;&lt;/i&gt;<br/>                    &lt;h3&gt;Desarrollo Web&lt;/h3&gt;<br/>                    &lt;p&gt;HTML5, CSS3, JavaScript, React, Angular, Vue.js&lt;/p&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;skill-item&quot;&gt;<br/>                    &lt;i class=&quot;fas fa-server&quot;&gt;&lt;/i&gt;<br/>                    &lt;h3&gt;Backend&lt;/h3&gt;<br/>                    &lt;p&gt;Node.js, Python, PHP, .NET, Bases de Datos (SQL/NoSQL)&lt;/p&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;skill-item&quot;&gt;<br/>                    &lt;i class=&quot;fas fa-paint-brush&quot;&gt;&lt;/i&gt;<br/>                    &lt;h3&gt;Diseño UX/UI&lt;/h3&gt;<br/>                    &lt;p&gt;Figma, Sketch, Adobe XD, Prototipado, User Research&lt;/p&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;skill-item&quot;&gt;<br/>                    &lt;i class=&quot;fas fa-mobile-alt&quot;&gt;&lt;/i&gt;<br/>                    &lt;h3&gt;Responsividad&lt;/h3&gt;<br/>                    &lt;p&gt;Diseño Adaptativo, Mobile-First, Frameworks CSS&lt;/p&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;skill-item&quot;&gt;<br/>                    &lt;i class=&quot;fas fa-cloud&quot;&gt;&lt;/i&gt;<br/>                    &lt;h3&gt;DevOps/Cloud&lt;/h3&gt;<br/>                    &lt;p&gt;Docker, Git, AWS, Azure, Google Cloud&lt;/p&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;skill-item&quot;&gt;<br/>                    &lt;i class=&quot;fas fa-lightbulb&quot;&gt;&lt;/i&gt;<br/>                    &lt;h3&gt;Creatividad&lt;/h3&gt;<br/>                    &lt;p&gt;Resolución de problemas, Innovación, Pensamiento lateral&lt;/p&gt;<br/>                &lt;/div&gt;<br/>            &lt;/div&gt;<br/>        &lt;/div&gt;<br/>    &lt;/section&gt;<br/><br/>    &lt;!-- Portfolio Section --&gt;<br/>    &lt;section id=&quot;portfolio&quot; class=&quot;portfolio&quot;&gt;<br/>        &lt;div class=&quot;container&quot;&gt;<br/>            &lt;h2&gt;Mi Portfolio&lt;/h2&gt;<br/>            &lt;div class=&quot;portfolio-grid&quot;&gt;<br/>                &lt;div class=&quot;portfolio-item&quot;&gt;<br/>                    &lt;img src=&quot;https://via.placeholder.com/400x200/B3D9E6/333C4A?text=Proyecto+1&quot; alt=&quot;Proyecto 1&quot;&gt;<br/>                    &lt;div class=&quot;portfolio-info&quot;&gt;<br/>                        &lt;h3&gt;E-commerce Moderno&lt;/h3&gt;<br/>                        &lt;p&gt;Plataforma de comercio electrónico con React y Node.js.&lt;/p&gt;<br/>                        &lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;Ver Proyecto&lt;/a&gt;<br/>                    &lt;/div&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;portfolio-item&quot;&gt;<br/>                    &lt;img src=&quot;https://via.placeholder.com/400x200/D9EAD3/333C4A?text=Proyecto+2&quot; alt=&quot;Proyecto 2&quot;&gt;<br/>                    &lt;div class=&quot;portfolio-info&quot;&gt;<br/>                        &lt;h3&gt;Aplicación de Productividad&lt;/h3&gt;<br/>                        &lt;p&gt;Herramienta para gestionar tareas y proyectos personales.&lt;/p&gt;<br/>                        &lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;Ver Proyecto&lt;/a&gt;<br/>                    &lt;/div&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;portfolio-item&quot;&gt;<br/>                    &lt;img src=&quot;https://via.placeholder.com/400x200/E6F0F2/333C4A?text=Proyecto+3&quot; alt=&quot;Proyecto 3&quot;&gt;<br/>                    &lt;div class=&quot;portfolio-info&quot;&gt;<br/>                        &lt;h3&gt;Red Social Privada&lt;/h3&gt;<br/>                        &lt;p&gt;Diseño y desarrollo de una red social con autenticación.&lt;/p&gt;<br/>                        &lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;Ver Proyecto&lt;/a&gt;<br/>                    &lt;/div&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;portfolio-item&quot;&gt;<br/>                    &lt;img src=&quot;https://via.placeholder.com/400x200/B3D9E6/333C4A?text=Proyecto+4&quot; alt=&quot;Proyecto 4&quot;&gt;<br/>                    &lt;div class=&quot;portfolio-info&quot;&gt;<br/>                        &lt;h3&gt;Sitio Web Corporativo&lt;/h3&gt;<br/>                        &lt;p&gt;Web responsive para empresa de servicios con CMS.&lt;/p&gt;<br/>                        &lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;Ver Proyecto&lt;/a&gt;<br/>                    &lt;/div&gt;<br/>                &lt;/div&gt;<br/>            &lt;/div&gt;<br/>        &lt;/div&gt;<br/>    &lt;/section&gt;<br/><br/>    &lt;!-- Experience &amp; Education Section --&gt;<br/>    &lt;section id=&quot;experience&quot; class=&quot;experience&quot;&gt;<br/>        &lt;div class=&quot;container&quot;&gt;<br/>            &lt;h2&gt;Mi Trayectoria&lt;/h2&gt;<br/>            &lt;div class=&quot;timeline&quot;&gt;<br/>                &lt;div class=&quot;timeline-item&quot;&gt;<br/>                    &lt;div class=&quot;timeline-dot&quot;&gt;&lt;/div&gt;<br/>                    &lt;div class=&quot;timeline-content&quot;&gt;<br/>                        &lt;h3&gt;Desarrollador Senior&lt;/h3&gt;<br/>                        &lt;h4&gt;Empresa Tech Solutions | 2020 - Actualidad&lt;/h4&gt;<br/>                        &lt;p&gt;Liderazgo de equipos en proyectos críticos, implementación de nuevas arquitecturas, mentoría de desarrolladores junior.&lt;/p&gt;<br/>                    &lt;/div&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;timeline-item&quot;&gt;<br/>                    &lt;div class=&quot;timeline-dot&quot;&gt;&lt;/div&gt;<br/>                    &lt;div class=&quot;timeline-content&quot;&gt;<br/>                        &lt;h3&gt;Desarrollador Full-stack&lt;/h3&gt;<br/>                        &lt;h4&gt;Agencia Creativa Digital | 2017 - 2020&lt;/h4&gt;<br/>                        &lt;p&gt;Desarrollo front-end y back-end para diversos clientes, mantenimiento y optimización de bases de datos.&lt;/p&gt;<br/>                    &lt;/div&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;timeline-item&quot;&gt;<br/>                    &lt;div class=&quot;timeline-dot&quot;&gt;&lt;/div&gt;<br/>                    &lt;div class=&quot;timeline-content&quot;&gt;<br/>                        &lt;h3&gt;Grado en Ingeniería Informática&lt;/h3&gt;<br/>                        &lt;h4&gt;Universidad Nacional de Tecnología | 2012 - 2017&lt;/h4&gt;<br/>                        &lt;p&gt;Especialización en desarrollo de software y sistemas de información.&lt;/p&gt;<br/>                    &lt;/div&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;timeline-item&quot;&gt;<br/>                    &lt;div class=&quot;timeline-dot&quot;&gt;&lt;/div&gt;<br/>                    &lt;div class=&quot;timeline-content&quot;&gt;<br/>                        &lt;h3&gt;Diseñador Web Jr.&lt;/h3&gt;<br/>                        &lt;h4&gt;Startup Innovadora | 2016 - 2017 (Prácticas)&lt;/h4&gt;<br/>                        &lt;p&gt;Diseño de interfaces de usuario, maquetación de sitios web con HTML y CSS.&lt;/p&gt;<br/>                    &lt;/div&gt;<br/>                &lt;/div&gt;<br/>            &lt;/div&gt;<br/>        &lt;/div&gt;<br/>    &lt;/section&gt;<br/><br/>    &lt;!-- Contact Section --&gt;<br/>    &lt;section id=&quot;contact&quot; class=&quot;contact&quot;&gt;<br/>        &lt;div class=&quot;container contact-content&quot;&gt;<br/>            &lt;h2&gt;Contáctame&lt;/h2&gt;<br/>            &lt;p&gt;¿Tienes un proyecto en mente o solo quieres saludar? ¡No dudes en escribirme!&lt;/p&gt;<br/>            &lt;form class=&quot;contact-form&quot; action=&quot;#&quot; method=&quot;POST&quot;&gt;<br/>                &lt;div class=&quot;form-group&quot;&gt;<br/>                    &lt;label for=&quot;name&quot;&gt;Nombre Completo&lt;/label&gt;<br/>                    &lt;input type=&quot;text&quot; id=&quot;name&quot; name=&quot;name&quot; required&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;form-group&quot;&gt;<br/>                    &lt;label for=&quot;email&quot;&gt;Correo Electrónico&lt;/label&gt;<br/>                    &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; required&gt;<br/>                &lt;/div&gt;<br/>                &lt;div class=&quot;form-group&quot;&gt;<br/>                    &lt;label for=&quot;message&quot;&gt;Tu Mensaje&lt;/label&gt;<br/>                    &lt;textarea id=&quot;message&quot; name=&quot;message&quot; required&gt;&lt;/textarea&gt;<br/>                &lt;/div&gt;<br/>                &lt;button type=&quot;submit&quot; class=&quot;btn&quot;&gt;Enviar Mensaje&lt;/button&gt;<br/>            &lt;/form&gt;<br/>        &lt;/div&gt;<br/>    &lt;/section&gt;<br/><br/>    &lt;!-- Footer --&gt;<br/>    &lt;footer class=&quot;footer&quot;&gt;<br/>        &lt;div class=&quot;container&quot;&gt;<br/>            &lt;p&gt;&amp;copy; 2023 [Tu Nombre]. Todos los derechos reservados.&lt;/p&gt;<br/>            &lt;div class=&quot;social-links&quot;&gt;<br/>                &lt;a href=&quot;#&quot; target=&quot;_blank&quot; aria-label=&quot;LinkedIn&quot;&gt;&lt;i class=&quot;fab fa-linkedin&quot;&gt;&lt;/i&gt;&lt;/a&gt;<br/>                &lt;a href=&quot;#&quot; target=&quot;_blank&quot; aria-label=&quot;GitHub&quot;&gt;&lt;i class=&quot;fab fa-github&quot;&gt;&lt;/i&gt;&lt;/a&gt;<br/>                &lt;a href=&quot;#&quot; target=&quot;_blank&quot; aria-label=&quot;Twitter&quot;&gt;&lt;i class=&quot;fab fa-twitter&quot;&gt;&lt;/i&gt;&lt;/a&gt;<br/>                &lt;a href=&quot;#&quot; target=&quot;_blank&quot; aria-label=&quot;Instagram&quot;&gt;&lt;i class=&quot;fab fa-instagram&quot;&gt;&lt;/i&gt;&lt;/a&gt;<br/>            &lt;/div&gt;<br/>        &lt;/div&gt;<br/>    &lt;/footer&gt;<br/><br/>    &lt;!-- Scroll to Top Button --&gt;<br/>    &lt;button id=&quot;scrollToTopBtn&quot; title=&quot;Ir arriba&quot;&gt;&lt;i class=&quot;fas fa-arrow-up&quot;&gt;&lt;/i&gt;&lt;/button&gt;<br/><br/>    &lt;!--<br/>     * JavaScript for Page Interactivity<br/>     * <br/>     * This section handles dynamic behaviors like smooth scrolling<br/>     * and the mobile navigation toggle.<br/>     --&gt;<br/>    &lt;script&gt;<br/>        document.addEventListener(&apos;DOMContentLoaded&apos;, function() {<br/>            // --- Smooth Scrolling for Navigation Links ---<br/>            document.querySelectorAll(&apos;a[href^=&quot;#&quot;]&apos;).forEach(anchor =&gt; {<br/>                anchor.addEventListener(&apos;click&apos;, function (e) {<br/>                    e.preventDefault();<br/>                    const targetId = this.getAttribute(&apos;href&apos;);<br/>                    const targetElement = document.querySelector(targetId);<br/>                    if (targetElement) {<br/>                        // Scroll to element, accounting for fixed header height<br/>                        const headerOffset = document.querySelector(&apos;.header&apos;).offsetHeight;<br/>                        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;<br/>                        const offsetPosition = elementPosition - headerOffset - 20; // Added 20px padding<br/><br/>                        window.scrollTo({<br/>                            top: offsetPosition,<br/>                            behavior: &apos;smooth&apos;<br/>                        });<br/><br/>                        // Close mobile menu if open<br/>                        if (navMenu.classList.contains(&apos;active&apos;)) {<br/>                            navMenu.classList.remove(&apos;active&apos;);<br/>                            menuToggle.innerHTML = &apos;&lt;i class=&quot;fas fa-bars&quot;&gt;&lt;/i&gt;&apos;;<br/>                        }<br/>                    }<br/>                });<br/>            });<br/><br/>            // --- Mobile Navigation Toggle ---<br/>            const menuToggle = document.getElementById(&apos;menuToggle&apos;);<br/>            const navMenu = document.getElementById(&apos;navMenu&apos;);<br/><br/>            if (menuToggle &amp;&amp; navMenu) {<br/>                menuToggle.addEventListener(&apos;click&apos;, function() {<br/>                    navMenu.classList.toggle(&apos;active&apos;);<br/>                    if (navMenu.classList.contains(&apos;active&apos;)) {<br/>                        this.innerHTML = &apos;&lt;i class=&quot;fas fa-times&quot;&gt;&lt;/i&gt;&apos;; // Change icon to &apos;X&apos;<br/>                    } else {<br/>                        this.innerHTML = &apos;&lt;i class=&quot;fas fa-bars&quot;&gt;&lt;/i&gt;&apos;; // Change icon back to hamburger<br/>                    }<br/>                });<br/>            }<br/><br/>            // --- Scroll to Top Button Functionality ---<br/>            const scrollToTopBtn = document.getElementById(&apos;scrollToTopBtn&apos;);<br/><br/>            // Show/hide button based on scroll position<br/>            window.addEventListener(&apos;scroll&apos;, function() {<br/>                if (window.pageYOffset &gt; 300) { // Show button after scrolling 300px<br/>                    scrollToTopBtn.style.display = &apos;block&apos;;<br/>                } else {<br/>                    scrollToTopBtn.style.display = &apos;none&apos;;<br/>                }<br/>            });<br/><br/>            // Scroll to top when button is clicked<br/>            scrollToTopBtn.addEventListener(&apos;click&apos;, function() {<br/>                window.scrollTo({<br/>                    top: 0,<br/>                    behavior: &apos;smooth&apos;<br/>                });<br/>            });<br/>        });<br/>    &lt;/script&gt;<br/>&lt;/body&gt;<br/>&lt;/html&gt;<br/><br/><br/></td></tr></table></body></html>
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portfolio/CV - [Tu Nombre]</title>
+    <!-- Google Fonts: Lora para encabezados, Lato para cuerpo -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset & Base Styles */
+        :root {
+            --color-primary-bg: hsl(210, 20%, 98%); /* Very light blue-grey */
+            --color-secondary-bg: hsl(30, 100%, 98%); /* Very light cream */
+            --color-accent-blue: hsl(190, 60%, 85%); /* Soft teal */
+            --color-accent-pink: hsl(330, 60%, 90%); /* Soft pink */
+            --color-accent-green: hsl(120, 40%, 85%); /* Soft green */
+            --color-text-dark: hsl(210, 10%, 30%); /* Dark blue-grey */
+            --color-text-light: hsl(210, 5%, 50%); /* Medium grey */
+            --color-border: hsl(210, 10%, 90%); /* Light grey border */
+
+            --font-heading: 'Lora', serif;
+            --font-body: 'Lato', sans-serif;
+
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--color-text-dark);
+            background-color: var(--color-primary-bg);
+            overflow-x: hidden;
+        }
+
+        a {
+            color: var(--color-accent-blue);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--color-text-dark);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            color: var(--color-text-dark);
+            margin-bottom: var(--spacing-unit);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: calc(var(--spacing-unit) * 3);
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--color-accent-blue);
+            margin: var(--spacing-unit) auto 0;
+            border-radius: 2px;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 calc(var(--spacing-unit) * 2);
+        }
+
+        section {
+            padding: calc(var(--spacing-unit) * 5) 0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        section.fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Header & Navigation */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, var(--color-accent-blue) 0%, var(--color-accent-pink) 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.1);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: calc(var(--spacing-unit) * 2);
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: var(--spacing-unit);
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.8rem;
+            font-family: var(--font-heading);
+            margin-bottom: calc(var(--spacing-unit) * 2);
+            color: rgba(255,255,255,0.9);
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: white;
+            color: var(--color-accent-blue);
+            padding: var(--spacing-unit) calc(var(--spacing-unit) * 2);
+            border-radius: 50px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .btn:hover {
+            background-color: var(--color-text-dark);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: calc(var(--spacing-unit) * 0.75) 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 calc(var(--spacing-unit) * 2);
+        }
+
+        .navbar-logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-text-dark);
+        }
+
+        .navbar-logo:hover {
+            color: var(--color-accent-blue);
+        }
+
+        .navbar-nav ul {
+            display: flex;
+            gap: calc(var(--spacing-unit) * 2);
+        }
+
+        .navbar-nav a {
+            font-weight: 600;
+            color: var(--color-text-light);
+            position: relative;
+        }
+
+        .navbar-nav a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0%;
+            height: 2px;
+            background-color: var(--color-accent-blue);
+            transition: width 0.3s ease;
+        }
+
+        .navbar-nav a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--color-text-dark);
+        }
+
+        /* About Section */
+        #about {
+            background-color: var(--color-secondary-bg);
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: calc(var(--spacing-unit) * 4);
+            align-items: center;
+        }
+
+        .about-image {
+            flex: 1 1 300px;
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 100%;
+            border-radius: 50%;
+            border: 5px solid var(--color-accent-blue);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .about-text {
+            flex: 2 1 400px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-text h3 {
+            font-size: 2rem;
+            margin-bottom: var(--spacing-unit);
+        }
+
+        /* Experience & Education Section */
+        #experience, #education {
+            background-color: var(--color-primary-bg);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--spacing-unit) 0;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--color-accent-blue);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: white;
+            border: 4px solid var(--color-accent-pink);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-left {
+            left: 0;
+        }
+
+        .timeline-right {
+            left: 50%;
+        }
+
+        .timeline-left::after {
+            left: unset;
+            right: -14px;
+        }
+
+        .timeline-right::after {
+            left: -11px;
+        }
+
+        .timeline-content {
+            padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 2);
+            background-color: white;
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.5rem;
+            color: var(--color-accent-blue);
+        }
+
+        .timeline-content .date {
+            color: var(--color-text-light);
+            font-weight: 600;
+            margin-bottom: var(--spacing-unit);
+            display: block;
+        }
+
+        /* Skills Section */
+        #skills {
+            background-color: var(--color-secondary-bg);
+            text-align: center;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: calc(var(--spacing-unit) * 2);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .skill-item {
+            background-color: white;
+            padding: calc(var(--spacing-unit) * 2);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+
+        .skill-item i {
+            font-size: 3rem;
+            color: var(--color-accent-blue);
+            margin-bottom: var(--spacing-unit);
+        }
+
+        .skill-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0;
+        }
+
+        /* Portfolio Section */
+        #portfolio {
+            background-color: var(--color-primary-bg);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: calc(var(--spacing-unit) * 3);
+        }
+
+        .portfolio-item {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+        }
+
+        .portfolio-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .portfolio-info {
+            padding: calc(var(--spacing-unit) * 1.5);
+        }
+
+        .portfolio-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: calc(var(--spacing-unit) * 0.5);
+            color: var(--color-accent-blue);
+        }
+
+        .portfolio-info p {
+            font-size: 0.95rem;
+            color: var(--color-text-light);
+            margin-bottom: calc(var(--spacing-unit) * 1);
+        }
+
+        .portfolio-info .tags span {
+            display: inline-block;
+            background-color: var(--color-accent-green);
+            color: white;
+            font-size: 0.8rem;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: var(--color-secondary-bg);
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-content p {
+            font-size: 1.1rem;
+            margin-bottom: calc(var(--spacing-unit) * 2);
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: calc(var(--spacing-unit) * 2);
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            font-size: 1.2rem;
+            padding: calc(var(--spacing-unit) * 0.8) calc(var(--spacing-unit) * 1.5);
+            border: 2px solid var(--color-accent-blue);
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--color-text-dark);
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            background-color: var(--color-accent-blue);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .contact-links a i {
+            font-size: 1.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--color-text-dark);
+            color: white;
+            text-align: center;
+            padding: calc(var(--spacing-unit) * 2);
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: var(--color-accent-pink);
+        }
+
+        .footer a:hover {
+            color: var(--color-accent-blue);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .navbar-nav ul {
+                gap: var(--spacing-unit);
+            }
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 0 10px 10px;
+                border-color: transparent transparent transparent white;
+            }
+
+            .timeline-left::after,
+            .timeline-right::after {
+                left: 18px;
+            }
+            
+            .timeline-right {
+                left: 0%;
+            }
+            h1 {
+                font-size: 3.5rem;
+            }
+            .hero p {
+                font-size: 1.4rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar-nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: rgba(255, 255, 255, 0.98);
+                position: absolute;
+                top: 70px; /* Adjust based on navbar height */
+                left: 0;
+                box-shadow: 0 8px 10px rgba(0,0,0,0.1);
+                padding: calc(var(--spacing-unit) * 2) 0;
+            }
+
+            .navbar-nav.active {
+                display: flex;
+            }
+
+            .navbar-nav ul {
+                flex-direction: column;
+                text-align: center;
+                width: 100%;
+                gap: var(--spacing-unit);
+            }
+
+            .navbar-nav li {
+                margin: var(--spacing-unit) 0;
+            }
+
+            .navbar-nav a {
+                font-size: 1.2rem;
+                padding: var(--spacing-unit);
+                display: block;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-image img {
+                max-width: 250px;
+            }
+
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 0 10px 10px;
+                border-color: transparent transparent transparent white;
+            }
+
+            .timeline-left::after,
+            .timeline-right::after {
+                left: 18px;
+            }
+            
+            .timeline-right {
+                left: 0%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Hola, soy [Tu Nombre]</h1>
+            <p>[Tu Profesión/Rol], creando experiencias digitales elegantes.</p>
+            <a href="#contact" class="btn">Contáctame</a>
+        </div>
+    </section>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#home" class="navbar-logo">[Tu Inicial]</a>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="navbar-nav">
+                <ul>
+                    <li><a href="#about">Sobre Mí</a></li>
+                    <li><a href="#experience">Experiencia</a></li>
+                    <li><a href="#education">Educación</a></li>
+                    <li><a href="#skills">Habilidades</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" class="container">
+        <h2>Sobre Mí</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="https://via.placeholder.com/300/F0F8FF/6A5ACD?text=Tu+Foto" alt="Tu Nombre">
+            </div>
+            <div class="about-text">
+                <h3>Un poco sobre mi viaje...</h3>
+                <p>Soy [Tu Nombre], un [Tu Profesión/Rol] apasionado por crear soluciones web atractivas y funcionales. Con una sólida base en [menciona algunas tecnologías clave, ej: JavaScript, React, Node.js] y un ojo para el diseño limpio y moderno, me esfuerzo por construir experiencias de usuario intuitivas y elegantes.</p>
+                <p>Mi objetivo es transformar ideas complejas en productos digitales accesibles y de alto rendimiento. Siempre estoy buscando aprender nuevas tecnologías y mejorar mis habilidades para enfrentar los desafíos del mañana.</p>
+                <p>En mi tiempo libre, disfruto [menciona un hobby, ej: la fotografía, leer sobre IA, o el senderismo].</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="container">
+        <h2>Experiencia Laboral</h2>
+        <div class="timeline">
+            <div class="timeline-item timeline-left fade-in">
+                <div class="timeline-content">
+                    <h3>Desarrollador Full Stack</h3>
+                    <span>Empresa XYZ - Ene 2020 - Actualidad</span>
+                    <p>Lideré el desarrollo y mantenimiento de aplicaciones web utilizando React, Node.js y MongoDB. Colaboré estrechamente con equipos de diseño y producto para implementar nuevas características y optimizar el rendimiento. Mentoricé a desarrolladores junior en las mejores prácticas de código.</p>
+                </div>
+            </div>
+            <div class="timeline-item timeline-right fade-in">
+                <div class="timeline-content">
+                    <h3>Desarrollador Frontend</h3>
+                    <span>Agencia Creativa ABC - Jun 2017 - Dic 2019</span>
+                    <p>Diseñé e implementé interfaces de usuario responsivas y accesibles con HTML5, CSS3 y JavaScript. Trabajé en múltiples proyectos simultáneamente, asegurando la entrega a tiempo y dentro del presupuesto. Realicé pruebas de usabilidad y rendimiento.</p>
+                </div>
+            </div>
+            <div class="timeline-item timeline-left fade-in">
+                <div class="timeline-content">
+                    <h3>Desarrollador Jr.</h3>
+                    <span>Startup Tech Innovate - Sep 2015 - May 2017</span>
+                    <p>Participé en el desarrollo de componentes web utilizando jQuery y Backbone.js. Contribuí en la resolución de errores y el mantenimiento de la base de código existente. Aprendí metodologías ágiles y control de versiones con Git.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="container">
+        <h2>Educación</h2>
+        <div class="timeline">
+            <div class="timeline-item timeline-right fade-in">
+                <div class="timeline-content">
+                    <h3>Máster en Desarrollo Web</h3>
+                    <span>Universidad Tecnológica - 2018 - 2019</span>
+                    <p>Especialización en arquitecturas de microservicios y computación en la nube. Proyecto final: Aplicación de gestión de proyectos con GraphQL.</p>
+                </div>
+            </div>
+            <div class="timeline-item timeline-left fade-in">
+                <div class="timeline-content">
+                    <h3>Grado en Ingeniería Informática</h3>
+                    <span>Universidad Nacional - 2011 - 2015</span>
+                    <p>Énfasis en desarrollo de software y algoritmos. Trabajo de fin de grado: Sistema de recomendación basado en machine learning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="container">
+        <h2>Habilidades</h2>
+        <div class="skills-grid">
+            <div class="skill-item fade-in">
+                <i class="fab fa-react"></i>
+                <h3>React.js</h3>
+            </div>
+            <div class="skill-item fade-in">
+                <i class="fab fa-node-js"></i>
+                <h3>Node.js</h3>
+            </div>
+            <div class="skill-item fade-in">
+                <i class="fab fa-js-square"></i>
+                <h3>JavaScript</h3>
+            </div>
+            <div class="skill-item fade-in">
+                <i class="fab fa-html5"></i>
+                <h3>HTML5</h3>
+            </div>
+            <div class="skill-item fade-in">
+                <i class="fab fa-css3-alt"></i>
+                <h3>CSS3</h3>
+            </div>
+            <div class="skill-item fade-in">
+                <i class="fas fa-database"></i>
+                <h3>MongoDB</h3>
+            </div>
+            <div class="skill-item fade-in">
+                <i class="fab fa-git-alt"></i>
+                <h3>Git</h3>
+            </div>
+            <div class="skill-item fade-in">
+                <i class="fas fa-cloud"></i>
+                <h3>AWS/GCP</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="container">
+        <h2>Mis Proyectos</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item fade-in">
+                <img src="https://via.placeholder.com/400x200/B0E0E6/FFFFFF?text=Proyecto+1" alt="Proyecto 1">
+                <div class="portfolio-info">
+                    <h3>Aplicación de Tareas</h3>
+                    <p>Una aplicación web interactiva para organizar tus tareas diarias, construida con React y Redux.</p>
+                    <div class="tags">
+                        <span>React</span>
+                        <span>Redux</span>
+                        <span>Firebase</span>
+                    </div>
+                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Ver Proyecto</a>
+                </div>
+            </div>
+            <div class="portfolio-item fade-in">
+                <img src="https://via.placeholder.com/400x200/FFDAB9/FFFFFF?text=Proyecto+2" alt="Proyecto 2">
+                <div class="portfolio-info">
+                    <h3>E-commerce de Ropa</h3>
+                    <p>Plataforma de comercio electrónico con pasarela de pago y gestión de inventario.</p>
+                    <div class="tags">
+                        <span>Node.js</span>
+                        <span>Express</span>
+                        <span>MongoDB</span>
+                        <span>Stripe</span>
+                    </div>
+                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Ver Proyecto</a>
+                </div>
+            </div>
+            <div class="portfolio-item fade-in">
+                <img src="https://via.placeholder.com/400x200/98FB98/FFFFFF?text=Proyecto+3" alt="Proyecto 3">
+                <div class="portfolio-info">
+                    <h3>Blog Personal</h3>
+                    <p>Un blog moderno y responsivo para compartir artículos técnicos y personales.</p>
+                    <div class="tags">
+                        <span>Next.js</span>
+                        <span>GraphQL</span>
+                        <span>Contentful</span>
+                    </div>
+                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Ver Proyecto</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container">
+        <h2>Contáctame</h2>
+        <div class="contact-content">
+            <p>¿Tienes un proyecto en mente o simplemente quieres saludar? ¡No dudes en contactarme!</p>
+            <div class="contact-links">
+                <a href="mailto:tu.email@example.com" target="_blank"><i class="fas fa-envelope"></i> tu.email@example.com</a>
+                <a href="https://www.linkedin.com/in/tuperfil/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/tuusuario" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                <!-- Puedes añadir más enlaces aquí -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2023 [Tu Nombre]. Todos los derechos reservados.</p>
+        <p>Hecho con <i class="fas fa-heart" style="color: var(--color-accent-pink);"></i> y código.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu if open
+                if (document.getElementById('mobile-menu').classList.contains('active')) {
+                    document.getElementById('mobile-menu').click();
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navbarNav = document.querySelector('.navbar-nav');
+
+        mobileMenu.addEventListener('click', () => {
+            navbarNav.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            mobileMenu.querySelector('i').classList.toggle('fa-bars');
+            mobileMenu.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // Fade-in sections on scroll using Intersection Observer
+        const sections = document.querySelectorAll('section');
+
+        const observerOptions = {
+            root: null, // viewport
+            rootMargin: '0px',
+            threshold: 0.2 // Trigger when 20% of the section is visible
+        };
+
+        const sectionObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target); // Stop observing once it's visible
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+
+        // Initial fade-in for the hero section immediately
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelector('.hero').classList.add('fade-in');
+        });
+
+        // Add shadow to navbar on scroll
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { // Adjust scroll threshold as needed
+                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
+            } else {
+                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+            }
+        });
+
+    </script>
+</body>
+</html>
+
+
