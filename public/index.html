@@ -1,25 +1,35 @@
 <!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portfolio/CV - [Tu Nombre]</title>
+    <title>Mi Portfolio/CV - Cristian David Cobaxin Seba</title>
     <!-- Google Fonts: Lora para encabezados, Lato para cuerpo -->
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Lora:wght@400;700&display=swap"
+        rel="stylesheet">
     <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* Reset & Base Styles */
         :root {
-            --color-primary-bg: hsl(210, 20%, 98%); /* Very light blue-grey */
-            --color-secondary-bg: hsl(30, 100%, 98%); /* Very light cream */
-            --color-accent-blue: hsl(190, 60%, 85%); /* Soft teal */
-            --color-accent-pink: hsl(330, 60%, 90%); /* Soft pink */
-            --color-accent-green: hsl(120, 40%, 85%); /* Soft green */
-            --color-text-dark: hsl(210, 10%, 30%); /* Dark blue-grey */
-            --color-text-light: hsl(210, 5%, 50%); /* Medium grey */
-            --color-border: hsl(210, 10%, 90%); /* Light grey border */
+            --color-primary-bg: hsl(210, 20%, 98%);
+            /* Very light blue-grey */
+            --color-secondary-bg: hsl(30, 100%, 98%);
+            /* Very light cream */
+            --color-accent-blue: hsl(190, 60%, 85%);
+            /* Soft teal */
+            --color-accent-pink: hsl(330, 60%, 90%);
+            /* Soft pink */
+            --color-accent-green: hsl(120, 40%, 85%);
+            /* Soft green */
+            --color-text-dark: hsl(210, 10%, 30%);
+            /* Dark blue-grey */
+            --color-text-light: hsl(210, 5%, 50%);
+            /* Medium grey */
+            --color-border: hsl(210, 10%, 90%);
+            /* Light grey border */
 
             --font-heading: 'Lora', serif;
             --font-body: 'Lato', sans-serif;
@@ -59,7 +69,12 @@
             list-style: none;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: var(--font-heading);
             color: var(--color-text-dark);
             margin-bottom: var(--spacing-unit);
@@ -125,7 +140,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.1);
+            background: rgba(0, 0, 0, 0.1);
             z-index: 1;
         }
 
@@ -136,18 +151,18 @@
         }
 
         .hero h1 {
-            font-size: 4.5rem;
+            font-size: 2.5rem;
             margin-bottom: var(--spacing-unit);
             color: white;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .hero p {
             font-size: 1.8rem;
             font-family: var(--font-heading);
             margin-bottom: calc(var(--spacing-unit) * 2);
-            color: rgba(255,255,255,0.9);
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
         }
 
         .btn {
@@ -159,21 +174,21 @@
             font-weight: 700;
             letter-spacing: 0.5px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         .btn:hover {
             background-color: var(--color-text-dark);
             color: white;
             transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
         }
 
         /* Navigation Bar */
         .navbar {
             background-color: rgba(255, 255, 255, 0.95);
             padding: calc(var(--spacing-unit) * 0.75) 0;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -236,6 +251,8 @@
         /* About Section */
         #about {
             background-color: var(--color-secondary-bg);
+            height: max-content;
+            max-height: min-content;
         }
 
         .about-content {
@@ -246,7 +263,7 @@
         }
 
         .about-image {
-            flex: 1 1 300px;
+            flex: 1 1 50px;
             text-align: center;
         }
 
@@ -254,7 +271,7 @@
             max-width: 100%;
             border-radius: 50%;
             border: 5px solid var(--color-accent-blue);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
 
         .about-text {
@@ -269,7 +286,8 @@
         }
 
         /* Experience & Education Section */
-        #experience, #education {
+        #experience,
+        #education {
             background-color: var(--color-primary-bg);
         }
 
@@ -333,13 +351,13 @@
             background-color: white;
             position: relative;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .timeline-content:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
         }
 
         .timeline-content h3 {
@@ -358,6 +376,8 @@
         #skills {
             background-color: var(--color-secondary-bg);
             text-align: center;
+            margin: 20px;
+            padding-bottom: 20px;
         }
 
         .skills-grid {
@@ -372,13 +392,13 @@
             background-color: white;
             padding: calc(var(--spacing-unit) * 2);
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .skill-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
         }
 
         .skill-item i {
@@ -407,13 +427,13 @@
             background-color: white;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .portfolio-item:hover {
             transform: translateY(-7px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
         }
 
         .portfolio-item img {
@@ -454,6 +474,9 @@
         #contact {
             background-color: var(--color-secondary-bg);
             text-align: center;
+            margin: 20px;
+            padding-bottom: 20px;
+            height: 100;
         }
 
         .contact-content {
@@ -517,6 +540,7 @@
             .navbar-nav ul {
                 gap: var(--spacing-unit);
             }
+
             .timeline::after {
                 left: 31px;
             }
@@ -538,13 +562,15 @@
             .timeline-right::after {
                 left: 18px;
             }
-            
+
             .timeline-right {
                 left: 0%;
             }
+
             h1 {
                 font-size: 3.5rem;
             }
+
             .hero p {
                 font-size: 1.4rem;
             }
@@ -557,9 +583,10 @@
                 width: 100%;
                 background-color: rgba(255, 255, 255, 0.98);
                 position: absolute;
-                top: 70px; /* Adjust based on navbar height */
+                top: 70px;
+                /* Adjust based on navbar height */
                 left: 0;
-                box-shadow: 0 8px 10px rgba(0,0,0,0.1);
+                box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
                 padding: calc(var(--spacing-unit) * 2) 0;
             }
 
@@ -630,7 +657,7 @@
             .timeline-right::after {
                 left: 18px;
             }
-            
+
             .timeline-right {
                 left: 0%;
             }
@@ -640,26 +667,29 @@
             h1 {
                 font-size: 2.2rem;
             }
+
             .hero p {
                 font-size: 1rem;
             }
+
             h2 {
                 font-size: 1.8rem;
             }
+
             .contact-links {
                 flex-direction: column;
                 align-items: center;
             }
         }
-
     </style>
 </head>
+
 <body>
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Hola, soy [Tu Nombre]</h1>
-            <p>[Tu Profesión/Rol], creando experiencias digitales elegantes.</p>
+            <h1>Hola, soy Cristian David Cobaxin Seba</h1>
+            <p>Desarrollador, DevOps, creando experiencias digitales.</p>
             <a href="#contact" class="btn">Contáctame</a>
         </div>
     </section>
@@ -667,7 +697,7 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="navbar-container">
-            <a href="#home" class="navbar-logo">[Tu Inicial]</a>
+            <a href="#home" class="navbar-logo">CDCS</a>
             <div class="menu-toggle" id="mobile-menu">
                 <i class="fas fa-bars"></i>
             </div>
@@ -689,13 +719,20 @@
         <h2>Sobre Mí</h2>
         <div class="about-content">
             <div class="about-image">
-                <img src="https://via.placeholder.com/300/F0F8FF/6A5ACD?text=Tu+Foto" alt="Tu Nombre">
+                <img src="C:\Users\cdcs0\OneDrive\Pictures\WhatsApp Image 2025-12-02 at 6.25.16 PM.jpeg"
+                    alt="Cristian Cobaxin">
             </div>
             <div class="about-text">
                 <h3>Un poco sobre mi viaje...</h3>
-                <p>Soy [Tu Nombre], un [Tu Profesión/Rol] apasionado por crear soluciones web atractivas y funcionales. Con una sólida base en [menciona algunas tecnologías clave, ej: JavaScript, React, Node.js] y un ojo para el diseño limpio y moderno, me esfuerzo por construir experiencias de usuario intuitivas y elegantes.</p>
-                <p>Mi objetivo es transformar ideas complejas en productos digitales accesibles y de alto rendimiento. Siempre estoy buscando aprender nuevas tecnologías y mejorar mis habilidades para enfrentar los desafíos del mañana.</p>
-                <p>En mi tiempo libre, disfruto [menciona un hobby, ej: la fotografía, leer sobre IA, o el senderismo].</p>
+                <p>Soy Cristian Cobaxin, desarrollador FullStack, me especializo en backend con Laravel, diseño limpio y
+                    moderno,
+                    me esfuerzo por construir experiencias de usuario intuitivas y elegantes.
+                </p>
+                <p>Mi objetivo es transformar ideas complejas en productos digitales accesibles y de alto rendimiento.
+                    Siempre estoy buscando aprender nuevas tecnologías y mejorar mis habilidades para enfrentar los
+                    desafíos del mañana.</p>
+                <p>En mi tiempo libre, disfruto Jugar videojuegos, leer novelas, aprender nuevas tecnologías.
+                </p>
             </div>
         </div>
     </section>
@@ -708,21 +745,28 @@
                 <div class="timeline-content">
                     <h3>Desarrollador Full Stack</h3>
                     <span>Empresa XYZ - Ene 2020 - Actualidad</span>
-                    <p>Lideré el desarrollo y mantenimiento de aplicaciones web utilizando React, Node.js y MongoDB. Colaboré estrechamente con equipos de diseño y producto para implementar nuevas características y optimizar el rendimiento. Mentoricé a desarrolladores junior en las mejores prácticas de código.</p>
+                    <p>Lideré el desarrollo y mantenimiento de aplicaciones web utilizando React, Node.js y MongoDB.
+                        Colaboré estrechamente con equipos de diseño y producto para implementar nuevas características
+                        y optimizar el rendimiento. Mentoricé a desarrolladores junior en las mejores prácticas de
+                        código.</p>
                 </div>
             </div>
             <div class="timeline-item timeline-right fade-in">
                 <div class="timeline-content">
                     <h3>Desarrollador Frontend</h3>
                     <span>Agencia Creativa ABC - Jun 2017 - Dic 2019</span>
-                    <p>Diseñé e implementé interfaces de usuario responsivas y accesibles con HTML5, CSS3 y JavaScript. Trabajé en múltiples proyectos simultáneamente, asegurando la entrega a tiempo y dentro del presupuesto. Realicé pruebas de usabilidad y rendimiento.</p>
+                    <p>Diseñé e implementé interfaces de usuario responsivas y accesibles con HTML5, CSS3 y JavaScript.
+                        Trabajé en múltiples proyectos simultáneamente, asegurando la entrega a tiempo y dentro del
+                        presupuesto. Realicé pruebas de usabilidad y rendimiento.</p>
                 </div>
             </div>
             <div class="timeline-item timeline-left fade-in">
                 <div class="timeline-content">
                     <h3>Desarrollador Jr.</h3>
                     <span>Startup Tech Innovate - Sep 2015 - May 2017</span>
-                    <p>Participé en el desarrollo de componentes web utilizando jQuery y Backbone.js. Contribuí en la resolución de errores y el mantenimiento de la base de código existente. Aprendí metodologías ágiles y control de versiones con Git.</p>
+                    <p>Participé en el desarrollo de componentes web utilizando jQuery y Backbone.js. Contribuí en la
+                        resolución de errores y el mantenimiento de la base de código existente. Aprendí metodologías
+                        ágiles y control de versiones con Git.</p>
                 </div>
             </div>
         </div>
@@ -736,14 +780,16 @@
                 <div class="timeline-content">
                     <h3>Máster en Desarrollo Web</h3>
                     <span>Universidad Tecnológica - 2018 - 2019</span>
-                    <p>Especialización en arquitecturas de microservicios y computación en la nube. Proyecto final: Aplicación de gestión de proyectos con GraphQL.</p>
+                    <p>Especialización en arquitecturas de microservicios y computación en la nube. Proyecto final:
+                        Aplicación de gestión de proyectos con GraphQL.</p>
                 </div>
             </div>
             <div class="timeline-item timeline-left fade-in">
                 <div class="timeline-content">
                     <h3>Grado en Ingeniería Informática</h3>
                     <span>Universidad Nacional - 2011 - 2015</span>
-                    <p>Énfasis en desarrollo de software y algoritmos. Trabajo de fin de grado: Sistema de recomendación basado en machine learning.</p>
+                    <p>Énfasis en desarrollo de software y algoritmos. Trabajo de fin de grado: Sistema de recomendación
+                        basado en machine learning.</p>
                 </div>
             </div>
         </div>
@@ -796,7 +842,8 @@
                 <img src="https://via.placeholder.com/400x200/B0E0E6/FFFFFF?text=Proyecto+1" alt="Proyecto 1">
                 <div class="portfolio-info">
                     <h3>Aplicación de Tareas</h3>
-                    <p>Una aplicación web interactiva para organizar tus tareas diarias, construida con React y Redux.</p>
+                    <p>Una aplicación web interactiva para organizar tus tareas diarias, construida con React y Redux.
+                    </p>
                     <div class="tags">
                         <span>React</span>
                         <span>Redux</span>
@@ -841,8 +888,10 @@
         <div class="contact-content">
             <p>¿Tienes un proyecto en mente o simplemente quieres saludar? ¡No dudes en contactarme!</p>
             <div class="contact-links">
-                <a href="mailto:tu.email@example.com" target="_blank"><i class="fas fa-envelope"></i> tu.email@example.com</a>
-                <a href="https://www.linkedin.com/in/tuperfil/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="mailto:tu.email@example.com" target="_blank"><i class="fas fa-envelope"></i>
+                    tu.email@example.com</a>
+                <a href="https://www.linkedin.com/in/tuperfil/" target="_blank"><i class="fab fa-linkedin"></i>
+                    LinkedIn</a>
                 <a href="https://github.com/tuusuario" target="_blank"><i class="fab fa-github"></i> GitHub</a>
                 <!-- Puedes añadir más enlaces aquí -->
             </div>
@@ -922,6 +971,5 @@
 
     </script>
 </body>
+
 </html>
-
-
